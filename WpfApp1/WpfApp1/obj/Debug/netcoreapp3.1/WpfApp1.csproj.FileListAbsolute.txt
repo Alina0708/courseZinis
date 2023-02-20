@@ -1,0 +1,40 @@
+D:\6 sem\курсач_зинис\WpfApp1\WpfApp1\bin\Debug\netcoreapp3.1\WpfApp1.exe
+D:\6 sem\курсач_зинис\WpfApp1\WpfApp1\bin\Debug\netcoreapp3.1\WpfApp1.deps.json
+D:\6 sem\курсач_зинис\WpfApp1\WpfApp1\bin\Debug\netcoreapp3.1\WpfApp1.runtimeconfig.json
+D:\6 sem\курсач_зинис\WpfApp1\WpfApp1\bin\Debug\netcoreapp3.1\WpfApp1.runtimeconfig.dev.json
+D:\6 sem\курсач_зинис\WpfApp1\WpfApp1\bin\Debug\netcoreapp3.1\WpfApp1.dll
+D:\6 sem\курсач_зинис\WpfApp1\WpfApp1\bin\Debug\netcoreapp3.1\WpfApp1.pdb
+D:\6 sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1.csproj.AssemblyReference.cache
+D:\6 sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+D:\6 sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\App.g.cs
+D:\6 sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1_MarkupCompile.cache
+D:\6 sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1_MarkupCompile.lref
+D:\6 sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\MainWindow.baml
+D:\6 sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1.g.resources
+D:\6 sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1.GeneratedMSBuildEditorConfig.editorconfig
+D:\6 sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1.AssemblyInfoInputs.cache
+D:\6 sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1.AssemblyInfo.cs
+D:\6 sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1.csproj.CoreCompileInputs.cache
+D:\6 sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1.dll
+D:\6 sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1.pdb
+D:\6 sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1.genruntimeconfig.cache
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\bin\Debug\netcoreapp3.1\WpfApp1.exe
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\bin\Debug\netcoreapp3.1\WpfApp1.deps.json
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\bin\Debug\netcoreapp3.1\WpfApp1.runtimeconfig.json
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\bin\Debug\netcoreapp3.1\WpfApp1.runtimeconfig.dev.json
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\bin\Debug\netcoreapp3.1\WpfApp1.dll
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\bin\Debug\netcoreapp3.1\WpfApp1.pdb
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1.csproj.AssemblyReference.cache
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\App.g.cs
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1_MarkupCompile.cache
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1_MarkupCompile.lref
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\MainWindow.baml
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1.g.resources
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1.GeneratedMSBuildEditorConfig.editorconfig
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1.AssemblyInfoInputs.cache
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1.AssemblyInfo.cs
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1.csproj.CoreCompileInputs.cache
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1.dll
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1.pdb
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1.genruntimeconfig.cache

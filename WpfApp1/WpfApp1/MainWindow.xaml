@@ -1,0 +1,27 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+    
+        mc:Ignorable="d"
+
+
+    Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox SpellCheck.IsEnabled="True" Language="ru-ru" HorizontalAlignment="Left" Margin="221,31,0,0" Name="encryptedWord" Text="alina" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"  />
+        <Label Content="Введите шифруемое слово" HorizontalAlignment="Left" Margin="44,27,0,0" VerticalAlignment="Top" Width="172"/>
+        <Label Content="Введите ключевое слово" HorizontalAlignment="Left" Margin="44,58,0,0" VerticalAlignment="Top"/>
+        <TextBox SpellCheck.IsEnabled="True" Language="ru-ru" Name="textKeyWord" HorizontalAlignment="Left" Margin="221,62,0,0" Text="hello" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Введите ключ" HorizontalAlignment="Left" Margin="44,89,0,0" VerticalAlignment="Top"/>
+        <TextBox SpellCheck.IsEnabled="True" Language="ru-ru" Name="keyForNewAlfavet" HorizontalAlignment="Left" Margin="221,93,0,0" Text="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Зашифровать" HorizontalAlignment="Left" Margin="262,134,0,0" VerticalAlignment="Top" Click="Button_encrypted"/>
+        <Label Content="Исходный алфавит" HorizontalAlignment="Left" Margin="49,168,0,0" VerticalAlignment="Top"/>
+        <Label Content="Новый алфавит" HorizontalAlignment="Left" Margin="49,297,0,0" VerticalAlignment="Top"/>
+
+        <TextBlock  Name="oldAlphabet" HorizontalAlignment="Left" Margin="29,204,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="601"/>
+        <TextBlock  x:Name="newAlphabet" HorizontalAlignment="Left" Margin="29,328,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="601"/>
+
+    </Grid>
+</Window>
