@@ -20,8 +20,8 @@
         <Label Content="Исходный алфавит" HorizontalAlignment="Left" Margin="48,203,0,0" VerticalAlignment="Top"/>
         <Label Content="Новый алфавит" HorizontalAlignment="Left" Margin="48,332,0,0" VerticalAlignment="Top"/>
 
-        <TextBlock  Name="oldAlphabet" HorizontalAlignment="Left" Margin="28,239,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="601"/>
-        <TextBlock  x:Name="newAlphabet" HorizontalAlignment="Left" Margin="28,363,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="601"/>
+        <TextBlock  Name="oldAlphabet" HorizontalAlignment="Left" Margin="51,239,0,0" Text="" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="691"/>
+        <TextBlock  x:Name="newAlphabet" HorizontalAlignment="Left" Margin="51,371,0,0" Text="" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="661"/>
         <Label Content="Выберите язык" HorizontalAlignment="Left" Margin="51,38,0,0" VerticalAlignment="Top"/>
 
         <StackPanel x:Name="stackPanel" Margin="183,38,381,720" Orientation="Horizontal">
@@ -29,5 +29,13 @@
             <RadioButton Name="LanguagesEn" Content="Английский" IsChecked="True" Height="25" Width="96" />
         </StackPanel>
         <Button Content="Очистить" Name="Clean" HorizontalAlignment="Left" Margin="167,188,0,0" VerticalAlignment="Top" Width="77" Click="Clean_Click"/>
+        <TextBlock  x:Name="numbering" HorizontalAlignment="Left" Margin="48,229,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="178"/>
+        <TextBlock  x:Name="numberingForNew" HorizontalAlignment="Left" Margin="51,358,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="175"/>
+        <TextBlock  x:Name="numbering2" HorizontalAlignment="Left" Margin="215,229,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="497"/>
+        <TextBlock  x:Name="numberingForNew2" HorizontalAlignment="Left" Margin="215,358,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="555"/>
+        <TextBlock  x:Name="numberingForRu" HorizontalAlignment="Left" Margin="226,229,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="286"/>
+        <TextBlock  x:Name="numberingForNew2Ru" HorizontalAlignment="Left" Margin="226,358,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="281"/>
+        <TextBlock  x:Name="numberingForNew3Ru" HorizontalAlignment="Left" Margin="496,358,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="278"/>
+        <TextBlock  x:Name="numberingForRu3" HorizontalAlignment="Left" Margin="496,229,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="300"/>
     </Grid>
 </Window>

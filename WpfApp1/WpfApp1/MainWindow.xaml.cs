@@ -29,7 +29,7 @@ namespace WpfApp1
         {
             for (int i = 0; i < alpha.Length; i++)
             {
-                oldAlphabet.Text += alpha[i] + " ";
+                oldAlphabet.Text += alpha[i] + "  ";
             }
             return oldAlphabet.Text;
         }
@@ -37,7 +37,7 @@ namespace WpfApp1
         {
             for (int i = 0; i < newAlpha.Length; i++)
             {
-                newAlphabet.Text += newAlpha[i] + " ";
+                newAlphabet.Text += newAlpha[i] + "  ";
             }
             return newAlphabet.Text;
         }
@@ -145,7 +145,36 @@ namespace WpfApp1
                 }
             }
 
+        public string Numbering(TextBlock field1, TextBlock field2)
+        {
+            for (int i = 1; i <= 9; i++)
+            {
+                field1.Text += i + "    ";
+                field2.Text = field1.Text;
+            }
+            return field1.Text;
+        }
+        public string Numbering10(TextBlock field1, TextBlock field2, string numberingAlpha)
+        {
+            for (int i = 10; i < numberingAlpha.Length + 1; i++)
+            {
+                field1.Text += i + "  ";
+                field2.Text = field1.Text;
+            }
+            return field1.Text;
+        }
+        public string NumberingRu( TextBlock field3, TextBlock field4, string numberingAlpha)
+        {
+          
+            for (int i = 24; i < numberingAlpha.Length + 1; i++)
+            {
+                field3.Text += i + "   ";
+                field4.Text = field3.Text;
+            }
+            
 
+            return field3.Text;
+        }
 
 
         public void Button_encrypted(object sender, RoutedEventArgs e)
@@ -171,16 +200,19 @@ namespace WpfApp1
                 string alpha = "abcdefghijklmnopqrstuvwxyz";
                 createNewAlpha(keyWord, key, alpha);
                 publicOldAlpha(oldAlphabet, alpha);
+                Numbering(numbering, numberingForNew);
+                Numbering10(numbering2, numberingForNew2, alpha);
             }
             if (LanguagesRu.IsChecked == true)
             {
                 string alpha = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
                 createNewAlpha(keyWord, key, alpha);
                 publicOldAlpha(oldAlphabet, alpha);
+                Numbering(numbering, numberingForNew);
+                Numbering10(numberingForRu, numberingForNew2Ru, alpha);
+                NumberingRu( numberingForNew3Ru, numberingForRu3, alpha);
             }
 
-            // createNewAlpha(keyWord, key, alpha);
-            //publicOldAlpha(oldAlphabet);
             publicNewAlpha(newAlphabet);
 
 
@@ -197,6 +229,19 @@ namespace WpfApp1
             textKeyWord.Text = "";
             keyForNewAlfavet.Text = "";
             encryptedWord.Text = "";
+            numbering.Text = "";
+            numbering2.Text = "";
+            numberingForNew.Text = "";
+            numberingForNew2.Text = "";
+            numberingForRu.Text = "";
+            numberingForNew2Ru.Text = "";
+            numberingForNew3Ru.Text = "";
+            numberingForRu3.Text = "";
+
+
+
+
+
 
         }
 
