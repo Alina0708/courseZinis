@@ -22,7 +22,9 @@ namespace WpfApp1
             InitializeComponent();
         }
 
-       // private string alpha = "abcdefghijklmnopqrstuvwxyz";
+        EncryptionMatrix EncryptionMatrix = new EncryptionMatrix();
+        MatrixEncryption MatrixEncryption = new MatrixEncryption();
+
         private char[] newAlpha = new char[33];
 
         public string publicOldAlpha(TextBlock oldAlphabet, string alpha)
@@ -219,7 +221,6 @@ namespace WpfApp1
 
 
 
-
         }
 
         private void Clean_Click(object sender, RoutedEventArgs e)
@@ -245,16 +246,24 @@ namespace WpfApp1
 
         }
 
-
-
-        /*public void RadioButton_English_Checked(object sender, RoutedEventArgs e)
+        private void pageMatrixEncryption(object sender, RoutedEventArgs e)
         {
-            string alpha = "abcdefghijklmnopqrstuvwxyz";
+            MatrixEncryption.Show();
+            EncryptionMatrix.printMatrix(MatrixEncryption.TextBlockMatrix1, EncryptionMatrix.matrix1);
+            EncryptionMatrix.printMatrix(MatrixEncryption.TextBlockMatrix2, EncryptionMatrix.matrix2);
+            EncryptionMatrix.printMatrix(MatrixEncryption.TextBlockMatrix3, EncryptionMatrix.matrix3);
+            EncryptionMatrix.printMatrix(MatrixEncryption.TextBlockMatrix4, EncryptionMatrix.matrix4);
+            EncryptionMatrix.printMatrix(MatrixEncryption.TextBlockMatrix5, EncryptionMatrix.matrix5);
+
+
+
+            EncryptionMatrix.Numeric(MatrixEncryption.numericMatrix9, MatrixEncryption.numericMatrix16, MatrixEncryption.numericMatrix33);
+            EncryptionMatrix.Numeric(MatrixEncryption.numericMatrix9_2, MatrixEncryption.numericMatrix16_2, MatrixEncryption.numericMatrix33_2);
+            EncryptionMatrix.Numeric(MatrixEncryption.numericMatrix9_3, MatrixEncryption.numericMatrix16_3, MatrixEncryption.numericMatrix33_3);
+            EncryptionMatrix.Numeric(MatrixEncryption.numericMatrix9_4, MatrixEncryption.numericMatrix16_4, MatrixEncryption.numericMatrix33_4);
+            EncryptionMatrix.Numeric(MatrixEncryption.numericMatrix9_5, MatrixEncryption.numericMatrix16_5, MatrixEncryption.numericMatrix33_5);
+
         }
 
-        private void RadioButton_Russian_Checked(object sender, RoutedEventArgs e)
-        {
-            string alpha = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
-        }*/
     }
 }

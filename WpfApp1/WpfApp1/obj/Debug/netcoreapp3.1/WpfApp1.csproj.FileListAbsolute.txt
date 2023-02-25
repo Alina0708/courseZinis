@@ -38,3 +38,5 @@ D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1.
 D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1.dll
 D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1.pdb
 D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1.genruntimeconfig.cache
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\MatrixEncryption.g.cs
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\MatrixEncryption.baml

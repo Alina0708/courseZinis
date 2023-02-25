@@ -8,9 +8,9 @@
         mc:Ignorable="d"
 
 
-    Title="MainWindow" Height="800" Width="800">
+    Title="MainWindow" Height="800" Width="800" ResizeMode="NoResize">
     <Grid>
-        <TextBox SpellCheck.IsEnabled="True" Language="ru-ru" HorizontalAlignment="Left" Margin="226,85,0,0" Name="encryptedWord" Text="alina" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"  />
+        <TextBox SpellCheck.IsEnabled="True"  Language="ru-ru" HorizontalAlignment="Left" Margin="226,85,0,0" Name="encryptedWord" Text="alina" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"  />
         <Label Content="Введите шифруемое слово" HorizontalAlignment="Left" Margin="49,81,0,0" VerticalAlignment="Top" Width="172"/>
         <Label Content="Введите ключевое слово" HorizontalAlignment="Left" Margin="49,112,0,0" VerticalAlignment="Top"/>
         <TextBox SpellCheck.IsEnabled="True" Language="ru-ru" Name="textKeyWord" HorizontalAlignment="Left" Margin="226,116,0,0" Text="hello" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
@@ -24,9 +24,9 @@
         <TextBlock  x:Name="newAlphabet" HorizontalAlignment="Left" Margin="51,371,0,0" Text="" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="661"/>
         <Label Content="Выберите язык" HorizontalAlignment="Left" Margin="51,38,0,0" VerticalAlignment="Top"/>
 
-        <StackPanel x:Name="stackPanel" Margin="183,38,381,720" Orientation="Horizontal">
-            <RadioButton Name="LanguagesRu" Content="Русский"  Height="25" Width="96" />
-            <RadioButton Name="LanguagesEn" Content="Английский" IsChecked="True" Height="25" Width="96" />
+        <StackPanel x:Name="stackPanel" Margin="184,44,404,699" Orientation="Horizontal" >
+            <RadioButton Name="LanguagesRu" Content="Русский"  Height="15" Width="96" />
+            <RadioButton Name="LanguagesEn" Content="Английский" IsChecked="True" Height="15" Width="96" />
         </StackPanel>
         <Button Content="Очистить" Name="Clean" HorizontalAlignment="Left" Margin="167,188,0,0" VerticalAlignment="Top" Width="77" Click="Clean_Click"/>
         <TextBlock  x:Name="numbering" HorizontalAlignment="Left" Margin="48,229,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="178"/>
@@ -37,5 +37,7 @@
         <TextBlock  x:Name="numberingForNew2Ru" HorizontalAlignment="Left" Margin="226,358,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="281"/>
         <TextBlock  x:Name="numberingForNew3Ru" HorizontalAlignment="Left" Margin="496,358,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="278"/>
         <TextBlock  x:Name="numberingForRu3" HorizontalAlignment="Left" Margin="496,229,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="300"/>
+        <TextBlock x:Name="test" Background="Bisque" Margin="48,432,88,99"/>
+        <Button Content="Страница с матрицами шифрования" HorizontalAlignment="Left" Margin="535,735,0,0" VerticalAlignment="Top" Width="228" Click="pageMatrixEncryption"/>
     </Grid>
 </Window>
