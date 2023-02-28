@@ -43,9 +43,10 @@ namespace WpfApp1
             }
             return newAlphabet.Text;
         }
-        public string encrypt(string Message, string alpha)
+        public string encrypt(string Message, string alpha, TextBlock textBlock, TextBlock textBlock1)
         {
           string res = "";
+            string numRes = "";
           foreach (char ch in Message)
           {
             for (int i = 0; i < alpha.Length; i++)
@@ -53,11 +54,14 @@ namespace WpfApp1
                if (ch == alpha[i])
                {
                 res += newAlpha[i];
+                numRes += i + " ";
+                textBlock.Text = res;
+                        textBlock1.Text = numRes;
                break;
                }
             }
           }
-         return res;
+            return textBlock.Text;
         }
 
        public string decrypt(string Message, string alpha)
@@ -194,6 +198,7 @@ namespace WpfApp1
                         Console.WriteLine("Расшифрованное сообщение: " + open);*/
 
             string keyWord = textKeyWord.Text.ToLower();
+            string encryptWord = encryptedWord.Text.ToLower();
             int key = Convert.ToInt32(keyForNewAlfavet.Text);
 
 
@@ -204,6 +209,7 @@ namespace WpfApp1
                 publicOldAlpha(oldAlphabet, alpha);
                 Numbering(numbering, numberingForNew);
                 Numbering10(numbering2, numberingForNew2, alpha);
+                encrypt(encryptWord, alpha, test, wordEncriptZezar);
             }
             if (LanguagesRu.IsChecked == true)
             {
@@ -213,9 +219,12 @@ namespace WpfApp1
                 Numbering(numbering, numberingForNew);
                 Numbering10(numberingForRu, numberingForNew2Ru, alpha);
                 NumberingRu( numberingForNew3Ru, numberingForRu3, alpha);
+                encrypt(encryptWord, alpha, test, wordEncriptZezar);
             }
 
             publicNewAlpha(newAlphabet);
+            
+            //wordEncriptZezar
 
 
 

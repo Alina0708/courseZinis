@@ -37,7 +37,8 @@
         <TextBlock  x:Name="numberingForNew2Ru" HorizontalAlignment="Left" Margin="226,358,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="281"/>
         <TextBlock  x:Name="numberingForNew3Ru" HorizontalAlignment="Left" Margin="496,358,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="278"/>
         <TextBlock  x:Name="numberingForRu3" HorizontalAlignment="Left" Margin="496,229,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="300"/>
-        <TextBlock x:Name="test" Background="Bisque" Margin="48,432,88,99"/>
+        <TextBlock x:Name="test" Background="Bisque" Margin="16,445,4,273"/>
+        <TextBlock x:Name="wordEncriptZezar" Background="Aqua" Margin="16,517,4,198"/>
         <Button Content="Страница с матрицами шифрования" HorizontalAlignment="Left" Margin="535,735,0,0" VerticalAlignment="Top" Width="228" Click="pageMatrixEncryption"/>
     </Grid>
 </Window>
