@@ -43,10 +43,12 @@ namespace WpfApp1
             }
             return newAlphabet.Text;
         }
+
+        public string numRes = "";
         public string encrypt(string Message, string alpha, TextBlock textBlock, TextBlock textBlock1)
         {
           string res = "";
-            string numRes = "";
+            
           foreach (char ch in Message)
           {
             for (int i = 0; i < alpha.Length; i++)
@@ -54,15 +56,16 @@ namespace WpfApp1
                if (ch == alpha[i])
                {
                 res += newAlpha[i];
-                numRes += i + " ";
+                numRes += i + 1 + " ";
                 textBlock.Text = res;
-                        textBlock1.Text = numRes;
+                textBlock1.Text = numRes;
                break;
                }
             }
           }
             return textBlock.Text;
         }
+
 
        public string decrypt(string Message, string alpha)
         {
@@ -204,6 +207,8 @@ namespace WpfApp1
 
             if(LanguagesEn.IsChecked == true)
             {
+                //CleanPage();
+                newAlpha = new char[26];
                 string alpha = "abcdefghijklmnopqrstuvwxyz";
                 createNewAlpha(keyWord, key, alpha);
                 publicOldAlpha(oldAlphabet, alpha);
@@ -213,6 +218,9 @@ namespace WpfApp1
             }
             if (LanguagesRu.IsChecked == true)
             {
+
+                //CleanPage();
+                newAlpha = new char[33];
                 string alpha = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
                 createNewAlpha(keyWord, key, alpha);
                 publicOldAlpha(oldAlphabet, alpha);
@@ -223,8 +231,10 @@ namespace WpfApp1
             }
 
             publicNewAlpha(newAlphabet);
-            
-            //wordEncriptZezar
+
+
+            EncryptionMatrix.SelectedMatrix(keyForNewAlfavet, wordEncriptIndex, wordEncriptMatrix, numRes);
+
 
 
 
@@ -234,6 +244,23 @@ namespace WpfApp1
 
         private void Clean_Click(object sender, RoutedEventArgs e)
         {
+            CleanPage();
+        }
+
+        public void CleanPage()
+        {
+            numRes = "";
+            if (LanguagesEn.IsChecked == true)
+            {
+                newAlpha = new char[26];
+            }
+            if (LanguagesRu.IsChecked == true)
+            {
+                newAlpha = new char[33];
+            }
+
+
+
             newAlphabet.Text = "";
             oldAlphabet.Text = "";
             textKeyWord.Text = "";
@@ -247,10 +274,10 @@ namespace WpfApp1
             numberingForNew2Ru.Text = "";
             numberingForNew3Ru.Text = "";
             numberingForRu3.Text = "";
-
-
-
-
+            wordEncriptIndex.Text = "";
+            wordEncriptZezar.Text = "";
+            wordEncriptMatrix.Text = "";
+            test.Text = "";
 
 
         }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows;
+//using System.Windows;
 using System.Windows.Controls;
 
 namespace WpfApp1
@@ -192,25 +194,25 @@ namespace WpfApp1
         public void printMatrix(TextBlock textblock, int[,,] matrix)
         {
             int flag = 0;//счетчик
-            
+
             for (int i = 0; i < 32; i++)
             {
-                
-                  
-                    for (int k = 0; k < 2; k++)
-                    {
-                        textblock.Text += matrix[i, 0, k] + " ";
-                        flag = flag + 1;
-                        if (flag == 2)
-                        {
-                            textblock.Text += "  ";//расстоянние между матрица (1 строка)
-                            flag = 0;
-                        }
 
-                   
-                  
+
+                for (int k = 0; k < 2; k++)
+                {
+                    textblock.Text += matrix[i, 0, k] + " ";
+                    flag++;
+                    if (flag == 2)
+                    {
+                        textblock.Text += "  ";//расстоянние между матрица (1 строка)
+                        flag = 0;
+                    }
+
+
+
                 }
-               // textblock.Text += "\n";
+                // textblock.Text += "\n";
             }
             textblock.Text += "\n";
 
@@ -222,7 +224,7 @@ namespace WpfApp1
                     for (int k = 0; k < 2; k++)
                     {
                         textblock.Text += matrix[i, 1, k] + " ";
-                        flag = flag + 1;
+                        flag++;
                         if (flag == 2)
                         {
                             textblock.Text += "  ";//расстоянние между матрица (2 строка)
@@ -241,7 +243,7 @@ namespace WpfApp1
 
         public void Numeric(TextBlock textblock, TextBlock textblock2, TextBlock textblock3)
         {
-            for(int i= 1; i <= 9; i++)
+            for (int i = 1; i <= 9; i++)
             {
                 textblock.Text += i + "     ";
             }
@@ -256,8 +258,112 @@ namespace WpfApp1
         }
 
 
+        public void SelectedMatrix(TextBox key, TextBlock conclusionMod, TextBlock wordEncriptMatrix, string numRes)//ключ поле с выводом модуля и поле с выводом зашифрованного сообщения
+        {
+            int newKey = Convert.ToInt32(key.Text);
+            int numberMatrix = newKey % 5 + 1;
+            conclusionMod.Text = "Выбранная матрица под номером - " + numberMatrix;
+
+            int[,,] matrix;
+
+            switch (numberMatrix)
+            {
+                case 1: 
+                    matrix = matrix1; EncryptWordMatrix(wordEncriptMatrix, matrix1, numRes ); break;
+                case 2:
+                    matrix = matrix2; EncryptWordMatrix(wordEncriptMatrix, matrix2, numRes); break;
+                case 3:
+                    matrix = matrix3; EncryptWordMatrix(wordEncriptMatrix, matrix3, numRes); break;
+
+                case 4:
+                    matrix = matrix4; EncryptWordMatrix(wordEncriptMatrix, matrix4, numRes); break;
+                case 5:
+                    matrix = matrix5; EncryptWordMatrix(wordEncriptMatrix, matrix5, numRes); break;
+                default: 
+                    conclusionMod.Text = "edbbbb"; break;
+
+            }
+
+        }
+
+
+        public void EncryptWordMatrix(TextBlock encryptwordMatrix, int[,,] matrix, string numRes)
+        {
+            int flag = 0;//счетчик
+
+            string[] numbersString = numRes.Split(' ');
+
+
+
+              foreach (string number in numbersString) 
+              {
+                if(number != "")
+                {
+                    //  MessageBox.Show(Convert.ToInt32(number) + "");
+                    int first = Convert.ToInt32(number) - 1;
+
+
+                    for (int k = 0; k < 2; k++)
+                    {
+
+                        encryptwordMatrix.Text += matrix[first, 0, k] + " ";
+                        flag++;
+                        if (flag == 2)
+                        {
+                            encryptwordMatrix.Text += "  ";//расстоянние между матрица (1 строка)
+                            flag = 0;
+                        }
+
+
+
+                    }
+                }
+
+             
+                 
+
+               }
+            encryptwordMatrix.Text += "\n";
+
+
+            foreach (string number2 in numbersString)
+            {
+                if (number2 != "")
+                {
+                    int second = Convert.ToInt32(number2) - 1;
+                    for (int j = 0; j < 1; j++)
+                    {
+
+                        for (int k = 0; k < 2; k++)
+                        {
+                            encryptwordMatrix.Text += matrix[second, 1, k] + " ";
+                            flag++;
+                            if (flag == 2)
+                            {
+                                encryptwordMatrix.Text += "  ";//расстоянние между матрица (2 строка)
+                                flag = 0;
+                            }
+
+                        }
+
+                    }
+                }
+            }
+
+
+
+
+        }
+
+
+
+
+
+
 
     }
+
+
 
 
 }

@@ -8,7 +8,7 @@
         mc:Ignorable="d"
 
 
-    Title="MainWindow" Height="800" Width="800" ResizeMode="NoResize">
+    Title="Страница с зашифровкой" Height="800" Width="800" ResizeMode="NoResize">
     <Grid>
         <TextBox SpellCheck.IsEnabled="True"  Language="ru-ru" HorizontalAlignment="Left" Margin="226,85,0,0" Name="encryptedWord" Text="alina" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"  />
         <Label Content="Введите шифруемое слово" HorizontalAlignment="Left" Margin="49,81,0,0" VerticalAlignment="Top" Width="172"/>
@@ -39,6 +39,8 @@
         <TextBlock  x:Name="numberingForRu3" HorizontalAlignment="Left" Margin="496,229,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="300"/>
         <TextBlock x:Name="test" Background="Bisque" Margin="16,445,4,273"/>
         <TextBlock x:Name="wordEncriptZezar" Background="Aqua" Margin="16,517,4,198"/>
-        <Button Content="Страница с матрицами шифрования" HorizontalAlignment="Left" Margin="535,735,0,0" VerticalAlignment="Top" Width="228" Click="pageMatrixEncryption"/>
+        <TextBlock x:Name="wordEncriptIndex" Background="LightBlue"  Margin="16,591,4,124"/>
+        <TextBlock x:Name="wordEncriptMatrix" Background="LightGray"  Margin="16,665,4,10"/>
+        <Button Content="Страница с матрицами шифрования" HorizontalAlignment="Left" Margin="542,23,0,0" VerticalAlignment="Top" Width="228" Click="pageMatrixEncryption"/>
     </Grid>
 </Window>
