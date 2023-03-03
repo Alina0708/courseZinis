@@ -42,5 +42,6 @@
         <TextBlock x:Name="wordEncriptIndex" Background="LightBlue"  Margin="16,591,4,124"/>
         <TextBlock x:Name="wordEncriptMatrix" Background="LightGray"  Margin="16,665,4,10"/>
         <Button Content="Страница с матрицами шифрования" HorizontalAlignment="Left" Margin="542,23,0,0" VerticalAlignment="Top" Width="228" Click="pageMatrixEncryption"/>
+        <Button Content="Страница с выбранной матрицей" HorizontalAlignment="Left" Margin="542,65,0,0" VerticalAlignment="Top" Width="228" Click="pageChoiceMatrix"/>
     </Grid>
 </Window>

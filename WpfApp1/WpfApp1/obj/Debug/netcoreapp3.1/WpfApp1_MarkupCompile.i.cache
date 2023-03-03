@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 D:\6sem\курсач_зинис\WpfApp1\WpfApp1\App.xaml
-2128313661
+3-94325963
 
-7-228904966
+9-42789868
 192-1533232326
-MainWindow.xaml;MatrixEncryption.xaml;
+ChoiceMatrix.xaml;MainWindow.xaml;MatrixEncryption.xaml;
 
-True
+False
 

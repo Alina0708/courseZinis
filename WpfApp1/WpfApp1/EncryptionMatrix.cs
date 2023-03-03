@@ -4,6 +4,7 @@ using System.Text;
 using System.Windows;
 //using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace WpfApp1
 {
@@ -356,8 +357,31 @@ namespace WpfApp1
         }
 
 
+        //страница с выбранной матрицей
+        public void SelectedIndexMatrix(TextBox key, string numRes, TextBlock MatrixChoice)
+        {
+            int newKey = Convert.ToInt32(key.Text);
+            int numberMatrix = newKey % 5 + 1;
 
+            int[,,] matrix0;
 
+            switch (numberMatrix)
+            {
+                case 1:
+                    matrix0 = matrix1; printMatrix(MatrixChoice, matrix1); MatrixChoice.Background = Brushes.Bisque; break;
+                case 2:
+                    matrix0 = matrix2; printMatrix(MatrixChoice, matrix2); MatrixChoice.Background = Brushes.PaleGreen; break;
+                case 3:
+                    matrix0 = matrix3; printMatrix(MatrixChoice, matrix3); MatrixChoice.Background = Brushes.Thistle; break;
+
+                case 4:
+                    matrix0 = matrix4; printMatrix(MatrixChoice, matrix4); MatrixChoice.Background = Brushes.LightBlue; break;
+                case 5:
+                    matrix0 = matrix5; printMatrix(MatrixChoice, matrix5); MatrixChoice.Background = Brushes.Pink; break;
+
+            }
+
+        }
 
 
 

@@ -23,7 +23,6 @@ namespace WpfApp1
         }
 
         EncryptionMatrix EncryptionMatrix = new EncryptionMatrix();
-        MatrixEncryption MatrixEncryption = new MatrixEncryption();
 
         private char[] newAlpha = new char[33];
 
@@ -280,17 +279,18 @@ namespace WpfApp1
             test.Text = "";
 
 
+
         }
 
         private void pageMatrixEncryption(object sender, RoutedEventArgs e)
         {
+            MatrixEncryption MatrixEncryption = new MatrixEncryption();
             MatrixEncryption.Show();
             EncryptionMatrix.printMatrix(MatrixEncryption.TextBlockMatrix1, EncryptionMatrix.matrix1);
             EncryptionMatrix.printMatrix(MatrixEncryption.TextBlockMatrix2, EncryptionMatrix.matrix2);
             EncryptionMatrix.printMatrix(MatrixEncryption.TextBlockMatrix3, EncryptionMatrix.matrix3);
             EncryptionMatrix.printMatrix(MatrixEncryption.TextBlockMatrix4, EncryptionMatrix.matrix4);
             EncryptionMatrix.printMatrix(MatrixEncryption.TextBlockMatrix5, EncryptionMatrix.matrix5);
-
 
 
             EncryptionMatrix.Numeric(MatrixEncryption.numericMatrix9, MatrixEncryption.numericMatrix16, MatrixEncryption.numericMatrix33);
@@ -301,5 +301,12 @@ namespace WpfApp1
 
         }
 
+        private void pageChoiceMatrix(object sender, RoutedEventArgs e)
+        {
+            ChoiceMatrix ChoiceMatrix = new ChoiceMatrix();
+            ChoiceMatrix.Show();
+            EncryptionMatrix.SelectedIndexMatrix(keyForNewAlfavet, numRes, ChoiceMatrix.MatrixChoice);
+
+        }
     }
 }
