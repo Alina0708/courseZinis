@@ -263,7 +263,10 @@ namespace WpfApp1
         {
             int newKey = Convert.ToInt32(key.Text);
             int numberMatrix = newKey % 5 + 1;
-            conclusionMod.Text = "Выбранная матрица под номером - " + numberMatrix;
+            conclusionMod.Text += "Находим выбранный массив матриц по формуле Key % 5 + 1, где key - ключ \n";
+            conclusionMod.Text += newKey + " % 5 + 1 = " + numberMatrix + "\n";
+            conclusionMod.Text += "Выбранный массив матриц под номером - " + numberMatrix + "\n";
+
 
             int[,,] matrix;
 
@@ -280,8 +283,7 @@ namespace WpfApp1
                     matrix = matrix4; EncryptWordMatrix(wordEncriptMatrix, matrix4, numRes); break;
                 case 5:
                     matrix = matrix5; EncryptWordMatrix(wordEncriptMatrix, matrix5, numRes); break;
-                default: 
-                    conclusionMod.Text = "edbbbb"; break;
+
 
             }
 
@@ -358,26 +360,27 @@ namespace WpfApp1
 
 
         //страница с выбранной матрицей
-        public void SelectedIndexMatrix(TextBox key, string numRes, TextBlock MatrixChoice)
+        public void SelectedIndexMatrix(TextBox key, string numRes, TextBlock MatrixChoice, TextBlock choiceIndex, TextBlock nameMatrix, TextBlock rowIndex)
         {
+
             int newKey = Convert.ToInt32(key.Text);
             int numberMatrix = newKey % 5 + 1;
+            nameMatrix.Text = "Выбранный массив матриц под номером " + numberMatrix;
+            rowIndex.Text = "Индексы зашифрованного сообщения \n" + numRes;
 
-            int[,,] matrix0;
 
             switch (numberMatrix)
             {
                 case 1:
-                    matrix0 = matrix1; printMatrix(MatrixChoice, matrix1); MatrixChoice.Background = Brushes.Bisque; break;
+                printMatrix(MatrixChoice, matrix1); IndexMatrix(choiceIndex, matrix1, numRes); MatrixChoice.Background = Brushes.Bisque; break;
                 case 2:
-                    matrix0 = matrix2; printMatrix(MatrixChoice, matrix2); MatrixChoice.Background = Brushes.PaleGreen; break;
+                printMatrix(MatrixChoice, matrix2); IndexMatrix(choiceIndex, matrix2, numRes); MatrixChoice.Background = Brushes.PaleGreen; break;
                 case 3:
-                    matrix0 = matrix3; printMatrix(MatrixChoice, matrix3); MatrixChoice.Background = Brushes.Thistle; break;
-
+                printMatrix(MatrixChoice, matrix3); IndexMatrix(choiceIndex, matrix3, numRes); MatrixChoice.Background = Brushes.Thistle; break;
                 case 4:
-                    matrix0 = matrix4; printMatrix(MatrixChoice, matrix4); MatrixChoice.Background = Brushes.LightBlue; break;
+                printMatrix(MatrixChoice, matrix4); IndexMatrix(choiceIndex, matrix4, numRes); MatrixChoice.Background = Brushes.LightBlue; break;
                 case 5:
-                    matrix0 = matrix5; printMatrix(MatrixChoice, matrix5); MatrixChoice.Background = Brushes.Pink; break;
+                printMatrix(MatrixChoice, matrix5); IndexMatrix(choiceIndex, matrix5, numRes); MatrixChoice.Background = Brushes.Pink; break;
 
             }
 
@@ -385,7 +388,73 @@ namespace WpfApp1
 
 
 
-    }
+
+
+        //
+        public void IndexMatrix(TextBlock choiceIndex, int[,,] matrix, string numRes)
+        {
+            int flag = 0;//счетчик
+
+            string[] numbersString = numRes.Split(' ');
+
+
+
+            foreach (string number in numbersString)
+            {
+                if (number != "")
+                {
+                    //  MessageBox.Show(Convert.ToInt32(number) + "");
+                    int first = Convert.ToInt32(number) - 1;
+                    choiceIndex.Text += first + " шифруется следующей матрицей: " + "\n";
+
+                    for (int k = 0; k < 2; k++)
+                    {
+
+                        choiceIndex.Text += matrix[first, 0, k] + " ";
+                        flag++;
+                        if (flag == 2)
+                        {
+                            choiceIndex.Text += "  ";//расстоянние между матрица (1 строка)
+                            flag = 0;
+                        }
+
+
+
+                    }
+                    choiceIndex.Text += "\n";
+                    for (int j = 0; j < 1; j++)
+                    {
+
+                        for (int k = 0; k < 2; k++)
+                        {
+                            choiceIndex.Text += matrix[first, 1, k] + " ";
+                            flag++;
+                            if (flag == 2)
+                            {
+                                choiceIndex.Text += "  ";//расстоянние между матрица (2 строка)
+                                flag = 0;
+                            }
+
+                        }
+
+                    }
+                }
+                choiceIndex.Text += "\n";
+                choiceIndex.Text += "\n";
+
+
+            }
+            //choiceIndex.Text += "\n";
+
+
+                
+            
+        }
+         
+
+
+
+        }
 
 
 

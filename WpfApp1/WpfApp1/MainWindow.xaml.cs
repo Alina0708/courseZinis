@@ -44,9 +44,10 @@ namespace WpfApp1
         }
 
         public string numRes = "";
-        public string encrypt(string Message, string alpha, TextBlock textBlock, TextBlock textBlock1)
+        public string res = "";
+        public string encrypt(string Message, string alpha, TextBlock textBlock)
         {
-          string res = "";
+
             
           foreach (char ch in Message)
           {
@@ -55,14 +56,30 @@ namespace WpfApp1
                if (ch == alpha[i])
                {
                 res += newAlpha[i];
-                numRes += i + 1 + " ";
                 textBlock.Text = res;
-                textBlock1.Text = numRes;
                break;
                }
             }
           }
-            return textBlock.Text;
+            return res;
+        }
+
+        public string indexEncryptWordCaesar(string res, string alpha, TextBlock textBlock1)
+        {
+            foreach (char l in res)
+            {
+                for (int k = 0; k < alpha.Length; k++)
+                {
+                    if (l == alpha[k])
+                    {
+                        numRes += k + 1 + " ";
+                        textBlock1.Text = numRes;
+                    }
+
+                }
+
+            }
+            return textBlock1.Text;
         }
 
 
@@ -213,7 +230,8 @@ namespace WpfApp1
                 publicOldAlpha(oldAlphabet, alpha);
                 Numbering(numbering, numberingForNew);
                 Numbering10(numbering2, numberingForNew2, alpha);
-                encrypt(encryptWord, alpha, test, wordEncriptZezar);
+                encrypt(encryptWord, alpha, test);
+                indexEncryptWordCaesar(res, alpha, wordEncriptZezar);
             }
             if (LanguagesRu.IsChecked == true)
             {
@@ -226,7 +244,8 @@ namespace WpfApp1
                 Numbering(numbering, numberingForNew);
                 Numbering10(numberingForRu, numberingForNew2Ru, alpha);
                 NumberingRu( numberingForNew3Ru, numberingForRu3, alpha);
-                encrypt(encryptWord, alpha, test, wordEncriptZezar);
+                encrypt(encryptWord, alpha, test);
+                indexEncryptWordCaesar(res, alpha, wordEncriptZezar);
             }
 
             publicNewAlpha(newAlphabet);
@@ -305,8 +324,8 @@ namespace WpfApp1
         {
             ChoiceMatrix ChoiceMatrix = new ChoiceMatrix();
             ChoiceMatrix.Show();
-            EncryptionMatrix.SelectedIndexMatrix(keyForNewAlfavet, numRes, ChoiceMatrix.MatrixChoice);
-
+            EncryptionMatrix.SelectedIndexMatrix(keyForNewAlfavet, numRes, ChoiceMatrix.MatrixChoice, ChoiceMatrix.choiceIndex, ChoiceMatrix.nameMatrix, ChoiceMatrix.rowIndex);
+            EncryptionMatrix.Numeric(ChoiceMatrix.numericMatrix9, ChoiceMatrix.numericMatrix16, ChoiceMatrix.numericMatrix33);
         }
     }
 }

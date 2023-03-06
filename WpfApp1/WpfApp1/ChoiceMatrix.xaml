@@ -5,12 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Выбранная матрица" Height="450" Width="850">
+        Title="Выбранная матрица" Height="490" Width="850" ResizeMode="NoResize">
     <Grid>
         <TextBlock x:Name="numericMatrix9" HorizontalAlignment="Left" FontSize="13" Margin="50,22,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="208"/>
         <TextBlock x:Name="numericMatrix16" HorizontalAlignment="Left" FontSize="13" Margin="265,22,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="246"/>
         <TextBlock x:Name="numericMatrix33" HorizontalAlignment="Left" FontSize="12" Margin="432,23,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" Width="384"/>
         <TextBlock x:Name="MatrixChoice" FontSize="11" Background="LightBlue"  HorizontalAlignment="Left" Margin="50,50,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="765"/>
-        <TextBlock x:Name="choiceIndex" FontSize="11" Background="Lavender" Margin="50,114,35,58"/>
+        <ScrollViewer Margin="600,110,10,10">
+            <TextBlock x:Name="choiceIndex" FontSize="11" Background="#CED0F2" Margin="0,0,10,17"/>
+        </ScrollViewer>
+        <TextBlock Name="nameMatrix" Height="50" FontSize="20" TextAlignment="Center"  Background="#A991DF" Margin="50,110,281,314"/>
+        <ScrollViewer Margin="50,155,281,160" >
+        <TextBlock Name="rowIndex" Margin="0,0,0,0" Background="#C1B4E1" Height="147"/>
+        </ScrollViewer>
+        <TextBlock Name="description" FontSize="14" Language="ru-ru" TextWrapping="Wrap" Text="Для того, чтобы зашифровать индексы букв, зашифрованного слова по Цезарю, необходимо определить по какому массиву матриц будет происходишь шифрование. Для этого используем формулу Key % 5 + 1, где key - ключ. После того, как выбрали массив матриц, осуществляем подстановку: индекс массива принимает значение индекса буквы шифруемого слова. В итоге каждый индекс шифруется в виде двумерной матрицы" Margin="50,302,281,15" Background="#CEC4E6"/>
     </Grid>
 </Window>
