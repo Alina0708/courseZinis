@@ -27,16 +27,31 @@
             </StackPanel>
         </ScrollViewer>
 
-        <TextBlock Name="decryptWordCaesar" HorizontalAlignment="Left" Margin="26,410,0,0" Text="Слово по индексам старого алфавита: " TextWrapping="Wrap" VerticalAlignment="Top" Height="57" Width="510"/>
+        <Label Margin="20,420,0,0" Content="Слово по индексам старого алфавита: "/>
+        <TextBlock Name="decryptWordCaesar" HorizontalAlignment="Left" Margin="247,420,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="543"/>
         <TextBlock Name="indexBlock" HorizontalAlignment="Left" Margin="26,318,0,0" Text="Индекси зашифрованного слова: " TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="492"/>
         <Label Content="Расшифровка" FontSize="14"  HorizontalAlignment="Left" Margin="327,10,0,0" VerticalAlignment="Top" Width="109" Height="30"/>
 
+        <Label Content="Первоначальный алфавит:"  HorizontalAlignment="Left" Margin="20,341,0,0" VerticalAlignment="Top" Width="163" />
 
-        <TextBlock  x:Name="numbering" HorizontalAlignment="Left" Margin="49,341,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="198"/>
-        <TextBlock  x:Name="numberingForRu3" HorizontalAlignment="Left" Margin="423,341,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="370"/>
-        <TextBlock  x:Name="numberingForRu" FontSize="13" HorizontalAlignment="Left" Margin="220,340,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="540"/>
-        <TextBlock  Name="oldAlphabet" HorizontalAlignment="Left" Margin="49,357,0,0" Text="" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="693"/>
-        <TextBlock  x:Name="numberingForRu_Copy" FontSize="13" HorizontalAlignment="Left" Margin="220,340,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="525"/>
+        <TextBlock  x:Name="numbering" HorizontalAlignment="Left" Margin="49,361,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="198"/>
+        <TextBlock  x:Name="numberingForRu3" HorizontalAlignment="Left" Margin="423,361,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="370"/>
+        <TextBlock  x:Name="numberingForRu" FontSize="14" HorizontalAlignment="Left" Margin="200,360,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="540"/>
+        <TextBlock  Name="oldAlphabet" HorizontalAlignment="Left" Margin="49,377,0,0" Text="" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="693"/>
+        <TextBlock  x:Name="numberingForRu_Copy" FontSize="13" HorizontalAlignment="Left" Margin="210,360,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="525"/>
+
+        <!-- new alphabet-->
+        <TextBlock  x:Name="NewNumbering" HorizontalAlignment="Left" Margin="49,461,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="198"/>
+        <TextBlock  x:Name="NewNumberingForRu3" HorizontalAlignment="Left" Margin="423,461,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="370"/>
+        <TextBlock  x:Name="NewNumberingForRu" FontSize="14" HorizontalAlignment="Left" Margin="200,460,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="540"/>
+        <TextBlock  Name="NewAlphabet" Text="" HorizontalAlignment="Left" Margin="49,477,0,0" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="693"/>
+        <TextBlock  x:Name="NewNumberingForRu_Copy" FontSize="13" HorizontalAlignment="Left" Margin="210,460,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="525"/>
+        <Label Content="Новый алфавит:"  HorizontalAlignment="Left" Margin="20,437,0,0" VerticalAlignment="Top" Width="163" />
+        <TextBlock x:Name="indexByNewAlphabet" HorizontalAlignment="Left" Margin="26,529,0,0" Text="Индекси слова по новому алфавиту: " TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="492"/>
+        <Label Content="Расшифрованное слово:" HorizontalAlignment="Left" Margin="26,551,0,0" VerticalAlignment="Top"/>
+        <TextBlock Name="word" HorizontalAlignment="Left" Margin="26,575,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="151" Width="567"/>
+        <TextBlock Name="wordEnd" HorizontalAlignment="Left" Margin="26,726,0,0" Text="Первоначальное слово: " TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="567"/>
+
 
     </Grid>
 </Window>

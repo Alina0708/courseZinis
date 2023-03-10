@@ -9,7 +9,7 @@ namespace WpfApp1
     {
         public void NumericRu(TextBlock enterTextblock)
         {
-            for(int i = 0; i < 9; i++)
+            for(int i = 1; i < 9; i++)
             {
                 enterTextblock.Text += i + "    ";
             }
