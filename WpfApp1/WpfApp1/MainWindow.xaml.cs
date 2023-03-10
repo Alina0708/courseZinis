@@ -85,23 +85,7 @@ namespace WpfApp1
         }
 
 
-       public string decrypt(string Message, string alpha)
-        {
-           string res = "";
-           foreach (char ch in Message)
-           {
-                    for (int i = 0; i < newAlpha.Length; i++)
-                    {
-                        if (ch == newAlpha[i])
-                        {
-                            res += alpha[i];
-                            break;
-                        }
-                    }
-           }
-        return res;
-       }
-
+      
         public void createNewAlpha(string keyWord, int key, string alpha) // создаёт новый алфавит с помощью ключа
         {
           bool findSame = false;
@@ -171,6 +155,29 @@ namespace WpfApp1
                     findSame = false;
                 }
             }
+
+        public void IndexBiNewAplhabet(TextBlock word, TextBlock conclusion, TextBlock end, string alpha, TextBlock wordEnd)
+        {
+            string decryptedWord = word.Text;
+            foreach (char word1 in decryptedWord)
+            {
+
+                    for (int i = 0; i < newAlpha.Length; i++)
+                    {
+               
+                       if (word1 == newAlpha[i])
+                       {
+                        conclusion.Text += i + 1 + " ";
+                        end.Text +=  i + 1 + " - " + alpha[i] + "\n";
+                        wordEnd.Text += alpha[i];
+                       }
+                    }
+
+            }
+
+        }
+
+       
 
         public string Numbering(TextBlock field1, TextBlock field2)
         {
@@ -345,6 +352,10 @@ namespace WpfApp1
         {
             Decoding Decoding = new Decoding();
             Decoding.Show();
+
+            string keyWord = textKeyWord.Text.ToLower();
+            int key = Convert.ToInt32(keyForNewAlfavet.Text);
+
             int newKey = Convert.ToInt32(keyForNewAlfavet.Text);
             int numberMatrix = newKey % 5 + 1;
             switch (numberMatrix)
@@ -366,22 +377,39 @@ namespace WpfApp1
             EncryptionMatrix.DeterminateMatrix(Decoding.determinant, EncryptionMatrix.matrixIndex, Decoding.indexBlock);
             if (LanguagesEn.IsChecked == true)
             {
+                newAlpha = new char[26];
                 string alpha = "abcdefghijklmnopqrstuvwxyz";
+                createNewAlpha(keyWord, key, alpha);
                 Decoding.LettersAlphabetByIndex(alpha, Decoding.decryptWordCaesar, EncryptionMatrix.mas1);
                 publicOldAlpha(Decoding.oldAlphabet, alpha);
                 NumericEnAndRu.NumericRu(Decoding.numbering);
                 NumericEnAndRu.NumericEn(Decoding.numberingForRu);
+                publicNewAlpha(Decoding.NewAlphabet);
+
+                NumericEnAndRu.NumericRu(Decoding.NewNumbering);
+                NumericEnAndRu.NumericEn(Decoding.NewNumberingForRu);
+                IndexBiNewAplhabet(Decoding.decryptWordCaesar, Decoding.indexByNewAlphabet, Decoding.word, alpha, Decoding.wordEnd);
+               
+
 
             }
             if (LanguagesRu.IsChecked == true)
             {
+                newAlpha = new char[33];
                 string alpha = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+                createNewAlpha(keyWord, key, alpha);
                 Decoding.LettersAlphabetByIndex(alpha, Decoding.decryptWordCaesar, EncryptionMatrix.mas1);
                 publicOldAlpha(Decoding.oldAlphabet, alpha);
                 NumericEnAndRu.NumericRu(Decoding.numbering);
                 NumericEnAndRu.NumericRu24(Decoding.numberingForRu_Copy);
                 NumericEnAndRu.NumericRu33(Decoding.numberingForRu3);
-                
+                publicNewAlpha(Decoding.NewAlphabet);
+
+                NumericEnAndRu.NumericRu(Decoding.NewNumbering);
+                NumericEnAndRu.NumericRu24(Decoding.NewNumberingForRu_Copy);
+                NumericEnAndRu.NumericRu33(Decoding.NewNumberingForRu3);
+                IndexBiNewAplhabet(Decoding.decryptWordCaesar, Decoding.indexByNewAlphabet, Decoding.word, alpha, Decoding.wordEnd);
+              
 
             }
 
