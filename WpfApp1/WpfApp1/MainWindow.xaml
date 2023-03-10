@@ -4,23 +4,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
-    
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
 
 
     Title="Страница с зашифровкой" Height="800" Width="800" ResizeMode="NoResize">
     <Grid>
-        <TextBox SpellCheck.IsEnabled="True"  Language="ru-ru" HorizontalAlignment="Left" Margin="226,85,0,0" Name="encryptedWord" Text="alina" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"  />
+        <TextBox  SpellCheck.IsEnabled="True" materialDesign:HintAssist.Hint="привет"  Language="ru-ru" HorizontalAlignment="Left" Margin="226,85,0,0" Name="encryptedWord" Text="alina" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"  />
         <Label Content="Введите шифруемое слово" HorizontalAlignment="Left" Margin="49,81,0,0" VerticalAlignment="Top" Width="172"/>
         <Label Content="Введите ключевое слово" HorizontalAlignment="Left" Margin="49,112,0,0" VerticalAlignment="Top"/>
-        <TextBox SpellCheck.IsEnabled="True" Language="ru-ru" Name="textKeyWord" HorizontalAlignment="Left" Margin="226,116,0,0" Text="hello" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox SpellCheck.IsEnabled="True"  materialDesign:HintAssist.Hint="мир" Language="ru-ru" Name="textKeyWord" HorizontalAlignment="Left" Margin="226,116,0,0" Text="hello" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Введите ключ" HorizontalAlignment="Left" Margin="49,143,0,0" VerticalAlignment="Top"/>
-        <TextBox SpellCheck.IsEnabled="True" Language="ru-ru" Name="keyForNewAlfavet" HorizontalAlignment="Left" Margin="226,147,0,0" Text="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Зашифровать" HorizontalAlignment="Left" Margin="267,188,0,0" VerticalAlignment="Top" Click="Button_encrypted"/>
-        <Label Content="Исходный алфавит" HorizontalAlignment="Left" Margin="48,203,0,0" VerticalAlignment="Top"/>
+        <TextBox SpellCheck.IsEnabled="True" materialDesign:HintAssist.Hint="5" Language="ru-ru" Name="keyForNewAlfavet" HorizontalAlignment="Left" Margin="226,147,0,0" Text="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Background="#e8c1f5" BorderBrush="#e8c1f5" Content="Зашифровать" HorizontalAlignment="Left" Margin="267,188,0,0" VerticalAlignment="Top" Click="Button_encrypted" Height="27"/>
+        <Label Content="Исходный алфавит" HorizontalAlignment="Left" Margin="46,231,0,0" VerticalAlignment="Top" Height="37" Width="112"/>
         <Label Content="Новый алфавит" HorizontalAlignment="Left" Margin="48,332,0,0" VerticalAlignment="Top"/>
 
-        <TextBlock  Name="oldAlphabet" HorizontalAlignment="Left" Margin="51,239,0,0" Text="" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="691"/>
+        <TextBlock  Name="oldAlphabet" HorizontalAlignment="Left" Margin="49,287,0,0" Text="" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="693"/>
         <TextBlock  x:Name="newAlphabet" HorizontalAlignment="Left" Margin="51,371,0,0" Text="" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="661"/>
         <Label Content="Выберите язык" HorizontalAlignment="Left" Margin="51,38,0,0" VerticalAlignment="Top"/>
 
@@ -28,20 +28,21 @@
             <RadioButton Name="LanguagesRu" Content="Русский"  Height="15" Width="96" />
             <RadioButton Name="LanguagesEn" Content="Английский" IsChecked="True" Height="15" Width="96" />
         </StackPanel>
-        <Button Content="Очистить" Name="Clean" HorizontalAlignment="Left" Margin="167,188,0,0" VerticalAlignment="Top" Width="77" Click="Clean_Click"/>
-        <TextBlock  x:Name="numbering" HorizontalAlignment="Left" Margin="48,229,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="178"/>
+        <Button BorderBrush="#e8c1f5" Background="#e8c1f5" Content="Очистить" Name="Clean" HorizontalAlignment="Left" Margin="122,188,0,0" VerticalAlignment="Top" Width="122" Click="Clean_Click" Height="27"/>
+        <TextBlock  x:Name="numbering" HorizontalAlignment="Left" Margin="46,271,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="178"/>
         <TextBlock  x:Name="numberingForNew" HorizontalAlignment="Left" Margin="51,358,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="175"/>
-        <TextBlock  x:Name="numbering2" HorizontalAlignment="Left" Margin="215,229,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="497"/>
+        <TextBlock  x:Name="numbering2" HorizontalAlignment="Left" Margin="213,271,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="499"/>
         <TextBlock  x:Name="numberingForNew2" HorizontalAlignment="Left" Margin="215,358,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="555"/>
-        <TextBlock  x:Name="numberingForRu" HorizontalAlignment="Left" Margin="226,229,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="286"/>
+        <TextBlock  x:Name="numberingForRu" HorizontalAlignment="Left" Margin="224,271,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="287"/>
         <TextBlock  x:Name="numberingForNew2Ru" HorizontalAlignment="Left" Margin="226,358,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="281"/>
         <TextBlock  x:Name="numberingForNew3Ru" HorizontalAlignment="Left" Margin="496,358,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="278"/>
-        <TextBlock  x:Name="numberingForRu3" HorizontalAlignment="Left" Margin="496,229,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="300"/>
+        <TextBlock  x:Name="numberingForRu3" HorizontalAlignment="Left" Margin="495,271,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="301"/>
         <TextBlock x:Name="test" Background="Bisque" Margin="16,445,4,273"/>
         <TextBlock x:Name="wordEncriptZezar" Background="Aqua" Margin="16,517,4,198"/>
         <TextBlock x:Name="wordEncriptIndex" Background="LightBlue"  Margin="16,591,4,124"/>
         <TextBlock x:Name="wordEncriptMatrix" Background="LightGray"  Margin="16,665,4,10"/>
-        <Button Content="Страница с массивами матриц шифрования" HorizontalAlignment="Left" Margin="518,23,0,0" VerticalAlignment="Top" Width="252" Click="pageMatrixEncryption"/>
-        <Button Content="Страница с выбранным массивом матриц" HorizontalAlignment="Left" Margin="518,65,0,0" VerticalAlignment="Top" Width="252" Click="pageChoiceMatrix"/>
+        <Button Background="#e8c1f5" BorderBrush="#e8c1f5" Content="Страница с массивами матриц шифрования" HorizontalAlignment="Left" Margin="430,23,0,0" VerticalAlignment="Top" Width="340" Click="pageMatrixEncryption"/>
+        <Button Background="#e8c1f5" BorderBrush="#e8c1f5" Content="Страница с выбранным массивом матриц" HorizontalAlignment="Left" Margin="430,65,0,0" VerticalAlignment="Top" Width="340" Click="pageChoiceMatrix"/>
+        <Button Background="#e8c1f5" BorderBrush="#e8c1f5" Content="Страница с расшифровкой" HorizontalAlignment="Left" Margin="430,105,0,0" VerticalAlignment="Top" Width="340" Click="pageDecrypted"/>
     </Grid>
 </Window>

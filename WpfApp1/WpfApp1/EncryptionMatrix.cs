@@ -272,8 +272,8 @@ namespace WpfApp1
 
             switch (numberMatrix)
             {
-                case 1: 
-                    matrix = matrix1; EncryptWordMatrix(wordEncriptMatrix, matrix1, numRes ); break;
+                case 1:
+                    matrix = matrix1; EncryptWordMatrix(wordEncriptMatrix, matrix1, numRes); break;
                 case 2:
                     matrix = matrix2; EncryptWordMatrix(wordEncriptMatrix, matrix2, numRes); break;
                 case 3:
@@ -298,9 +298,9 @@ namespace WpfApp1
 
 
 
-              foreach (string number in numbersString) 
-              {
-                if(number != "")
+            foreach (string number in numbersString)
+            {
+                if (number != "")
                 {
                     //  MessageBox.Show(Convert.ToInt32(number) + "");
                     int first = Convert.ToInt32(number) - 1;
@@ -322,10 +322,10 @@ namespace WpfApp1
                     }
                 }
 
-             
-                 
 
-               }
+
+
+            }
             encryptwordMatrix.Text += "\n";
 
 
@@ -372,15 +372,15 @@ namespace WpfApp1
             switch (numberMatrix)
             {
                 case 1:
-                printMatrix(MatrixChoice, matrix1); IndexMatrix(choiceIndex, matrix1, numRes); MatrixChoice.Background = Brushes.Bisque; break;
+                    printMatrix(MatrixChoice, matrix1); IndexMatrix(choiceIndex, matrix1, numRes); MatrixChoice.Background = Brushes.Bisque; break;
                 case 2:
-                printMatrix(MatrixChoice, matrix2); IndexMatrix(choiceIndex, matrix2, numRes); MatrixChoice.Background = Brushes.PaleGreen; break;
+                    printMatrix(MatrixChoice, matrix2); IndexMatrix(choiceIndex, matrix2, numRes); MatrixChoice.Background = Brushes.PaleGreen; break;
                 case 3:
-                printMatrix(MatrixChoice, matrix3); IndexMatrix(choiceIndex, matrix3, numRes); MatrixChoice.Background = Brushes.Thistle; break;
+                    printMatrix(MatrixChoice, matrix3); IndexMatrix(choiceIndex, matrix3, numRes); MatrixChoice.Background = Brushes.Thistle; break;
                 case 4:
-                printMatrix(MatrixChoice, matrix4); IndexMatrix(choiceIndex, matrix4, numRes); MatrixChoice.Background = Brushes.LightBlue; break;
+                    printMatrix(MatrixChoice, matrix4); IndexMatrix(choiceIndex, matrix4, numRes); MatrixChoice.Background = Brushes.LightBlue; break;
                 case 5:
-                printMatrix(MatrixChoice, matrix5); IndexMatrix(choiceIndex, matrix5, numRes); MatrixChoice.Background = Brushes.Pink; break;
+                    printMatrix(MatrixChoice, matrix5); IndexMatrix(choiceIndex, matrix5, numRes); MatrixChoice.Background = Brushes.Pink; break;
 
             }
 
@@ -405,7 +405,7 @@ namespace WpfApp1
                 {
                     //  MessageBox.Show(Convert.ToInt32(number) + "");
                     int first = Convert.ToInt32(number) - 1;
-                    choiceIndex.Text += first + " шифруется следующей матрицей: " + "\n";
+                    choiceIndex.Text += (first+1) + " шифруется следующей матрицей: " + "\n";
 
                     for (int k = 0; k < 2; k++)
                     {
@@ -444,20 +444,129 @@ namespace WpfApp1
 
 
             }
-            //choiceIndex.Text += "\n";
 
+
+
+
+
+        }
+
+        //страница декодирования
+        public int[,,] matrixIndex;
+        public int[] mas;
+        public void matrixEncryptWord(TextBlock matrixEncrypt, int[,,] matrix, string numRes)
+        {
+
+            // 6  12 10 5
+
+            string[] numbersString = numRes.Split(' ');
+            mas = new int[numbersString.Length];
+
+            for (int j = 0; j < numbersString.Length; j++)
+            {
+                if (numbersString[j] != "")
+                {
+                   int first = Convert.ToInt32(numbersString[j]) - 1;
+
+                    mas[j] = first;
+                }
+            }
+
+
+
+                matrixIndex = new int[numbersString.Length - 1, 2, 2];
+
+            for (int l = 0; l < numbersString.Length -1 ; l++)
+            { 
+                  for (int i = 0; i < 2; i++)
+                  {
+                       for (int k = 0; k < 2; k++)
+                        {
+                                matrixIndex[l, i, k] = matrix[mas[l], i, k];
+                        }
+
+
+                  }
+                  
 
                 
-            
-        }
-         
-
+            }
 
 
         }
 
+       
+
+
+        public void printMatrixWord(TextBlock textblock, int[,,] matrix)
+        {
+            int flag = 0;//счетчик
+
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+
+                for (int k = 0; k < 2; k++)
+                {
+                    textblock.Text += matrix[i, 0, k] + " ";
+                    flag++;
+                    if (flag == 2)
+                    {
+                        textblock.Text += "  ";//расстоянние между матрица (1 строка)
+                        flag = 0;
+                    }
 
 
 
+                }
+                // textblock.Text += "\n";
+            }
+            textblock.Text += "\n";
+
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < 1; j++)
+                {
+
+                    for (int k = 0; k < 2; k++)
+                    {
+                        textblock.Text += matrix[i, 1, k] + " ";
+                        flag++;
+                        if (flag == 2)
+                        {
+                            textblock.Text += "  ";//расстоянние между матрица (2 строка)
+                            flag = 0;
+                        }
+
+                    }
+
+                }
+                // textblock.Text += "\n";
+            }
+
+
+
+        }
+
+        public int[] mas1;
+        public void DeterminateMatrix(TextBlock textblock1, int[,,] matrixIndex, TextBlock textblock2)
+        {
+             mas1 = new int[matrixIndex.GetLength(0)];
+            for (int l = 0; l < matrixIndex.GetLength(0); l++)
+            {
+                        
+                        int index = matrixIndex[l, 0, 0] * matrixIndex[l, 1, 1] - matrixIndex[l, 0, 1] * matrixIndex[l, 1, 0];
+                        textblock1.Text += matrixIndex[l, 0, 0] + " * " + matrixIndex[l, 1, 1] + " - " + matrixIndex[l, 0, 1] + " * " + matrixIndex[l, 1, 0] + " = " + index + "\n";
+                         mas1[l] = index - 1;
+                        textblock2.Text += index + " ";
+            }
+        }
+
+
+
+
+
+
+
+    }
 }
     

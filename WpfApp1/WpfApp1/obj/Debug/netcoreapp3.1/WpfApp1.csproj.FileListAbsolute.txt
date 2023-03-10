@@ -42,3 +42,9 @@ D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\MatrixEn
 D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\MatrixEncryption.baml
 D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\ChoiceMatrix.g.cs
 D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\ChoiceMatrix.baml
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\Decoding.g.cs
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\Decoding.baml
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\bin\Debug\netcoreapp3.1\MaterialDesignColors.dll
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\bin\Debug\netcoreapp3.1\MaterialDesignThemes.Wpf.dll
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\bin\Debug\netcoreapp3.1\Microsoft.Xaml.Behaviors.dll
+D:\6sem\курсач_зинис\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\App.baml

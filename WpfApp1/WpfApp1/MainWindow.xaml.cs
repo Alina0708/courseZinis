@@ -23,6 +23,7 @@ namespace WpfApp1
         }
 
         EncryptionMatrix EncryptionMatrix = new EncryptionMatrix();
+        NumericEnAndRu NumericEnAndRu = new NumericEnAndRu();
 
         private char[] newAlpha = new char[33];
 
@@ -74,6 +75,7 @@ namespace WpfApp1
                     {
                         numRes += k + 1 + " ";
                         textBlock1.Text = numRes;
+                        break;
                     }
 
                 }
@@ -188,6 +190,15 @@ namespace WpfApp1
             }
             return field1.Text;
         }
+        public string Numbering10Ru(TextBlock field1, TextBlock field2, string numberingAlpha)
+        {
+            for (int i = 10; i < 24 ; i++)
+            {
+                field1.Text += i + "  ";
+                field2.Text = field1.Text;
+            }
+            return field1.Text;
+        }
         public string NumberingRu( TextBlock field3, TextBlock field4, string numberingAlpha)
         {
           
@@ -242,7 +253,7 @@ namespace WpfApp1
                 createNewAlpha(keyWord, key, alpha);
                 publicOldAlpha(oldAlphabet, alpha);
                 Numbering(numbering, numberingForNew);
-                Numbering10(numberingForRu, numberingForNew2Ru, alpha);
+                Numbering10Ru(numberingForRu, numberingForNew2Ru, alpha);
                 NumberingRu( numberingForNew3Ru, numberingForRu3, alpha);
                 encrypt(encryptWord, alpha, test);
                 indexEncryptWordCaesar(res, alpha, wordEncriptZezar);
@@ -268,6 +279,7 @@ namespace WpfApp1
         public void CleanPage()
         {
             numRes = "";
+            res = "";
             if (LanguagesEn.IsChecked == true)
             {
                 newAlpha = new char[26];
@@ -322,10 +334,57 @@ namespace WpfApp1
 
         private void pageChoiceMatrix(object sender, RoutedEventArgs e)
         {
+
             ChoiceMatrix ChoiceMatrix = new ChoiceMatrix();
             ChoiceMatrix.Show();
             EncryptionMatrix.SelectedIndexMatrix(keyForNewAlfavet, numRes, ChoiceMatrix.MatrixChoice, ChoiceMatrix.choiceIndex, ChoiceMatrix.nameMatrix, ChoiceMatrix.rowIndex);
             EncryptionMatrix.Numeric(ChoiceMatrix.numericMatrix9, ChoiceMatrix.numericMatrix16, ChoiceMatrix.numericMatrix33);
+        }
+
+        private void pageDecrypted(object sender, RoutedEventArgs e)
+        {
+            Decoding Decoding = new Decoding();
+            Decoding.Show();
+            int newKey = Convert.ToInt32(keyForNewAlfavet.Text);
+            int numberMatrix = newKey % 5 + 1;
+            switch (numberMatrix)
+            {
+                case 1:
+                    EncryptionMatrix.matrixEncryptWord(Decoding.indexmatrixword, EncryptionMatrix.matrix1, numRes); break;
+                case 2:
+                    EncryptionMatrix.matrixEncryptWord(Decoding.indexmatrixword, EncryptionMatrix.matrix2, numRes); break;
+                case 3:
+                    EncryptionMatrix.matrixEncryptWord(Decoding.indexmatrixword, EncryptionMatrix.matrix3, numRes); break;
+                case 4:
+                    EncryptionMatrix.matrixEncryptWord(Decoding.indexmatrixword, EncryptionMatrix.matrix4, numRes); break;
+                case 5:
+                    EncryptionMatrix.matrixEncryptWord(Decoding.indexmatrixword, EncryptionMatrix.matrix4, numRes); break;
+
+            }
+           
+            EncryptionMatrix.printMatrixWord(Decoding.indexmatrixword, EncryptionMatrix.matrixIndex);
+            EncryptionMatrix.DeterminateMatrix(Decoding.determinant, EncryptionMatrix.matrixIndex, Decoding.indexBlock);
+            if (LanguagesEn.IsChecked == true)
+            {
+                string alpha = "abcdefghijklmnopqrstuvwxyz";
+                Decoding.LettersAlphabetByIndex(alpha, Decoding.decryptWordCaesar, EncryptionMatrix.mas1);
+                publicOldAlpha(Decoding.oldAlphabet, alpha);
+                NumericEnAndRu.NumericRu(Decoding.numbering);
+                NumericEnAndRu.NumericEn(Decoding.numberingForRu);
+
+            }
+            if (LanguagesRu.IsChecked == true)
+            {
+                string alpha = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+                Decoding.LettersAlphabetByIndex(alpha, Decoding.decryptWordCaesar, EncryptionMatrix.mas1);
+                publicOldAlpha(Decoding.oldAlphabet, alpha);
+                NumericEnAndRu.NumericRu(Decoding.numbering);
+                NumericEnAndRu.NumericRu24(Decoding.numberingForRu_Copy);
+                NumericEnAndRu.NumericRu33(Decoding.numberingForRu3);
+                
+
+            }
+
         }
     }
 }

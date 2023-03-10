@@ -10,12 +10,18 @@
     <Compile Update="ChoiceMatrix.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Decoding.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="MatrixEncryption.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="ChoiceMatrix.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Decoding.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
