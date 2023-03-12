@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -22,6 +23,7 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+
 
         EncryptionMatrix EncryptionMatrix = new EncryptionMatrix();
         NumericEnAndRu NumericEnAndRu = new NumericEnAndRu();
@@ -445,6 +447,7 @@ namespace WpfApp1
         {
             
             Validation.NotEmptyField(keyForNewAlfavet);
+            Validation.OnlyNumbers(keyForNewAlfavet);
         }
         private void KeyForNewAlfavet_Leave(object sender, EventArgs e)
         {

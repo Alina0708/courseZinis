@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -27,9 +28,14 @@ namespace WpfApp1
           
         }
 
-        public void OnlyNumbers()
+        public void OnlyNumbers(TextBox keyForNewAlfavet)
         {
-
+            string input = keyForNewAlfavet.Text;
+            if (!Regex.IsMatch(input, "^[0-9]*$"))
+            {
+                keyForNewAlfavet.Text = Regex.Replace(input, "[^0-9]", "");
+                keyForNewAlfavet.CaretIndex = keyForNewAlfavet.Text.Length;
+            }
         }
 
         public void OnlyLettersRu()
