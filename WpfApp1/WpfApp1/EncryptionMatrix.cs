@@ -192,7 +192,7 @@ namespace WpfApp1
         };
 
 
-        public void printMatrix(TextBlock textblock, int[,,] matrix)
+        public void PrintMatrix(TextBlock textblock, int[,,] matrix)
         {
             int flag = 0;//счетчик
 
@@ -268,21 +268,21 @@ namespace WpfApp1
             conclusionMod.Text += "Выбранный массив матриц под номером - " + numberMatrix + "\n";
 
 
-            int[,,] matrix;
+           
 
             switch (numberMatrix)
             {
                 case 1:
-                    matrix = matrix1; EncryptWordMatrix(wordEncriptMatrix, matrix1, numRes); break;
+                     EncryptWordMatrix(wordEncriptMatrix, matrix1, numRes); break;
                 case 2:
-                    matrix = matrix2; EncryptWordMatrix(wordEncriptMatrix, matrix2, numRes); break;
+                    EncryptWordMatrix(wordEncriptMatrix, matrix2, numRes); break;
                 case 3:
-                    matrix = matrix3; EncryptWordMatrix(wordEncriptMatrix, matrix3, numRes); break;
+                     EncryptWordMatrix(wordEncriptMatrix, matrix3, numRes); break;
 
                 case 4:
-                    matrix = matrix4; EncryptWordMatrix(wordEncriptMatrix, matrix4, numRes); break;
+                     EncryptWordMatrix(wordEncriptMatrix, matrix4, numRes); break;
                 case 5:
-                    matrix = matrix5; EncryptWordMatrix(wordEncriptMatrix, matrix5, numRes); break;
+                     EncryptWordMatrix(wordEncriptMatrix, matrix5, numRes); break;
 
 
             }
@@ -372,15 +372,15 @@ namespace WpfApp1
             switch (numberMatrix)
             {
                 case 1:
-                    printMatrix(MatrixChoice, matrix1); IndexMatrix(choiceIndex, matrix1, numRes); MatrixChoice.Background = Brushes.Bisque; break;
+                    PrintMatrix(MatrixChoice, matrix1); IndexMatrix(choiceIndex, matrix1, numRes); MatrixChoice.Background = Brushes.Bisque; break;
                 case 2:
-                    printMatrix(MatrixChoice, matrix2); IndexMatrix(choiceIndex, matrix2, numRes); MatrixChoice.Background = Brushes.PaleGreen; break;
+                    PrintMatrix(MatrixChoice, matrix2); IndexMatrix(choiceIndex, matrix2, numRes); MatrixChoice.Background = Brushes.PaleGreen; break;
                 case 3:
-                    printMatrix(MatrixChoice, matrix3); IndexMatrix(choiceIndex, matrix3, numRes); MatrixChoice.Background = Brushes.Thistle; break;
+                    PrintMatrix(MatrixChoice, matrix3); IndexMatrix(choiceIndex, matrix3, numRes); MatrixChoice.Background = Brushes.Thistle; break;
                 case 4:
-                    printMatrix(MatrixChoice, matrix4); IndexMatrix(choiceIndex, matrix4, numRes); MatrixChoice.Background = Brushes.LightBlue; break;
+                    PrintMatrix(MatrixChoice, matrix4); IndexMatrix(choiceIndex, matrix4, numRes); MatrixChoice.Background = Brushes.LightBlue; break;
                 case 5:
-                    printMatrix(MatrixChoice, matrix5); IndexMatrix(choiceIndex, matrix5, numRes); MatrixChoice.Background = Brushes.Pink; break;
+                    PrintMatrix(MatrixChoice, matrix5); IndexMatrix(choiceIndex, matrix5, numRes); MatrixChoice.Background = Brushes.Pink; break;
 
             }
 
@@ -454,7 +454,7 @@ namespace WpfApp1
         //страница декодирования
         public int[,,] matrixIndex;
         public int[] mas;
-        public void matrixEncryptWord(TextBlock matrixEncrypt, int[,,] matrix, string numRes)
+        public void MatrixEncryptWord( int[,,] matrix, string numRes)
         {
 
             // 6  12 10 5
@@ -498,7 +498,7 @@ namespace WpfApp1
        
 
 
-        public void printMatrixWord(TextBlock textblock, int[,,] matrix)
+        public void PrintMatrixWord(TextBlock textblock, int[,,] matrix)
         {
             int flag = 0;//счетчик
 

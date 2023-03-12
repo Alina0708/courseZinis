@@ -9,10 +9,12 @@ namespace WpfApp1
 {
     class Validation
     {
+
         public void EmptyField(TextBox textbox)
         {
             if(string.IsNullOrEmpty(textbox.Text))
             {
+             
                 MessageBox.Show("Заполните поле", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 textbox.Background = Brushes.Red;
             }
@@ -20,8 +22,29 @@ namespace WpfApp1
 
         public void NotEmptyField(TextBox textbox)
         {
+                
                 textbox.Background = Brushes.White;
           
         }
+
+        public void OnlyNumbers()
+        {
+
+        }
+
+        public void OnlyLettersRu()
+        {
+
+        }
+
+        public void OnleLettersEn()
+        {
+
+        }
+
+        
+
+        
+
     }
 }

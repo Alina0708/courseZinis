@@ -10,13 +10,28 @@
 
     Title="Страница с зашифровкой" Height="800" Width="800" ResizeMode="NoResize">
     <Grid>
-        <TextBox  SpellCheck.IsEnabled="True" materialDesign:HintAssist.Hint="привет"  Language="ru-ru" HorizontalAlignment="Left" Margin="226,85,0,0" Name="encryptedWord" Text="alina" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="encryptedWord_TextChanged"  />
+        <TextBox  SpellCheck.IsEnabled="True" materialDesign:HintAssist.Hint="привет"  Language="ru-ru" HorizontalAlignment="Left" Margin="226,85,0,0" Name="encryptedWord" Text="alina" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="EncryptedWord_TextChanged" MouseLeave="EncryptedWord_Leave">
+            <TextBox.ToolTip >
+                <ToolTip x:Name="toolTip1">
+                </ToolTip>
+            </TextBox.ToolTip>
+        </TextBox>
         <Label Content="Введите шифруемое слово" HorizontalAlignment="Left" Margin="49,81,0,0" VerticalAlignment="Top" Width="172"/>
         <Label Content="Введите ключевое слово" HorizontalAlignment="Left" Margin="49,112,0,0" VerticalAlignment="Top"/>
-        <TextBox SpellCheck.IsEnabled="True"  materialDesign:HintAssist.Hint="мир" Language="ru-ru" Name="textKeyWord" HorizontalAlignment="Left" Margin="226,116,0,0" Text="hello" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="textKeyWord_TextChanged"/>
+        <TextBox SpellCheck.IsEnabled="True"  materialDesign:HintAssist.Hint="мир" Language="ru-ru" Name="textKeyWord" HorizontalAlignment="Left" Margin="226,116,0,0" Text="hello" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextKeyWord_TextChanged" MouseLeave="TextKeyWord_Leave">
+            <TextBox.ToolTip >
+                <ToolTip x:Name="toolTip2">
+                </ToolTip>
+            </TextBox.ToolTip>
+        </TextBox>
         <Label Content="Введите ключ" HorizontalAlignment="Left" Margin="49,143,0,0" VerticalAlignment="Top"/>
-        <TextBox SpellCheck.IsEnabled="True" materialDesign:HintAssist.Hint="5" Language="ru-ru" Name="keyForNewAlfavet" HorizontalAlignment="Left" Margin="226,147,0,0" Text="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="keyForNewAlfavet_TextChanged"/>
-        <Button Background="#e8c1f5" BorderBrush="#e8c1f5" Content="Зашифровать" HorizontalAlignment="Left" Margin="267,188,0,0" VerticalAlignment="Top" Click="Button_encrypted" Height="27"/>
+        <TextBox SpellCheck.IsEnabled="True" materialDesign:HintAssist.Hint="5" Language="ru-ru" Name="keyForNewAlfavet" HorizontalAlignment="Left" Margin="226,147,0,0" Text="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="KeyForNewAlfavet_TextChanged" MouseLeave="KeyForNewAlfavet_Leave">
+            <TextBox.ToolTip >
+                <ToolTip x:Name="toolTip3">
+                </ToolTip>
+            </TextBox.ToolTip>
+        </TextBox>
+        <Button Background="#e8c1f5" BorderBrush="#e8c1f5" Content="Зашифровать" HorizontalAlignment="Left" Margin="267,188,0,0" VerticalAlignment="Top" Name="buttonEncrypt" Click="Button_encrypted" Height="27"/>
         <Label Content="Исходный алфавит" HorizontalAlignment="Left" Margin="46,231,0,0" VerticalAlignment="Top" Height="37" Width="112"/>
         <Label Content="Новый алфавит" HorizontalAlignment="Left" Margin="48,332,0,0" VerticalAlignment="Top"/>
 
@@ -41,8 +56,8 @@
         <TextBlock x:Name="wordEncriptZezar" Background="Aqua" Margin="16,517,4,198"/>
         <TextBlock x:Name="wordEncriptIndex" Background="LightBlue"  Margin="16,591,4,124"/>
         <TextBlock x:Name="wordEncriptMatrix" Background="LightGray"  Margin="16,665,4,10"/>
-        <Button Background="#e8c1f5" BorderBrush="#e8c1f5" Content="Страница с массивами матриц шифрования" HorizontalAlignment="Left" Margin="430,23,0,0" VerticalAlignment="Top" Width="340" Click="pageMatrixEncryption"/>
-        <Button Background="#e8c1f5" BorderBrush="#e8c1f5" Content="Страница с выбранным массивом матриц" HorizontalAlignment="Left" Margin="430,65,0,0" VerticalAlignment="Top" Width="340" Click="pageChoiceMatrix"/>
-        <Button Background="#e8c1f5" BorderBrush="#e8c1f5" Content="Страница с расшифровкой" HorizontalAlignment="Left" Margin="430,105,0,0" VerticalAlignment="Top" Width="340" Click="pageDecrypted"/>
+        <Button Background="#e8c1f5" BorderBrush="#e8c1f5" Content="Страница с массивами матриц шифрования" HorizontalAlignment="Left" Margin="430,23,0,0" VerticalAlignment="Top" Width="340" Click="PageMatrixEncryption"/>
+        <Button Background="#e8c1f5" BorderBrush="#e8c1f5" Content="Страница с выбранным массивом матриц" HorizontalAlignment="Left" Margin="430,65,0,0" VerticalAlignment="Top" Width="340" Click="PageChoiceMatrix"/>
+        <Button Background="#e8c1f5" BorderBrush="#e8c1f5" Content="Страница с расшифровкой" HorizontalAlignment="Left" Margin="430,105,0,0" VerticalAlignment="Top" Width="340" Click="PageDecrypted"/>
     </Grid>
 </Window>
