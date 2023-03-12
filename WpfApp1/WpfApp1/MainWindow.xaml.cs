@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,10 +25,11 @@ namespace WpfApp1
 
         EncryptionMatrix EncryptionMatrix = new EncryptionMatrix();
         NumericEnAndRu NumericEnAndRu = new NumericEnAndRu();
+        Validation Validation = new Validation();
 
         private char[] newAlpha = new char[33];
 
-        public string publicOldAlpha(TextBlock oldAlphabet, string alpha)
+        public string PublicOldAlpha(TextBlock oldAlphabet, string alpha)
         {
             for (int i = 0; i < alpha.Length; i++)
             {
@@ -35,7 +37,7 @@ namespace WpfApp1
             }
             return oldAlphabet.Text;
         }
-        public string publicNewAlpha(TextBlock newAlphabet)
+        public string PublicNewAlpha(TextBlock newAlphabet)
         {
             for (int i = 0; i < newAlpha.Length; i++)
             {
@@ -46,7 +48,7 @@ namespace WpfApp1
 
         public string numRes = "";
         public string res = "";
-        public string encrypt(string Message, string alpha, TextBlock textBlock)
+        public string Encrypt(string Message, string alpha, TextBlock textBlock)
         {
 
             
@@ -65,7 +67,7 @@ namespace WpfApp1
             return res;
         }
 
-        public string indexEncryptWordCaesar(string res, string alpha, TextBlock textBlock1)
+        public string IndexEncryptWordCaesar(string res, string alpha, TextBlock textBlock1)
         {
             foreach (char l in res)
             {
@@ -86,7 +88,7 @@ namespace WpfApp1
 
 
       
-        public void createNewAlpha(string keyWord, int key, string alpha) // создаёт новый алфавит с помощью ключа
+        public void CreateNewAlpha(string keyWord, int key, string alpha) // создаёт новый алфавит с помощью ключа
         {
           bool findSame = false;
           key--;
@@ -197,7 +199,7 @@ namespace WpfApp1
             }
             return field1.Text;
         }
-        public string Numbering10Ru(TextBlock field1, TextBlock field2, string numberingAlpha)
+        public string Numbering10Ru(TextBlock field1, TextBlock field2)
         {
             for (int i = 10; i < 24 ; i++)
             {
@@ -222,60 +224,56 @@ namespace WpfApp1
 
         public void Button_encrypted(object sender, RoutedEventArgs e)
         {
-           
-            /*            
-                        string open = "", close = "";
-                        Console.Write("Открытое сообщение: ");
-                        open = Console.ReadLine().ToLower();
-                        close = Caesar.encrypt(open);
-                        Console.WriteLine();
-                        Console.WriteLine("Шифрованное сообщение: " + close);
-                        open = Caesar.decrypt(close);
-                        Console.WriteLine();
-                        Console.WriteLine("Расшифрованное сообщение: " + open);*/
-
-            string keyWord = textKeyWord.Text.ToLower();
-            string encryptWord = encryptedWord.Text.ToLower();
-            int key = Convert.ToInt32(keyForNewAlfavet.Text);
-
-
-            if(LanguagesEn.IsChecked == true)
+            if (encryptedWord.Text != "" && textKeyWord.Text != "" && keyForNewAlfavet.Text != "")
             {
-                //CleanPage();
-                newAlpha = new char[26];
-                string alpha = "abcdefghijklmnopqrstuvwxyz";
-                createNewAlpha(keyWord, key, alpha);
-                publicOldAlpha(oldAlphabet, alpha);
-                Numbering(numbering, numberingForNew);
-                Numbering10(numbering2, numberingForNew2, alpha);
-                encrypt(encryptWord, alpha, test);
-                indexEncryptWordCaesar(res, alpha, wordEncriptZezar);
+             #region
+
+                string keyWord = textKeyWord.Text.ToLower();
+                string encryptWord = encryptedWord.Text.ToLower();
+                int key = Convert.ToInt32(keyForNewAlfavet.Text);
+               
+
+                if (LanguagesEn.IsChecked == true)
+                {
+                    //CleanPage();
+                    newAlpha = new char[26];
+                    string alpha = "abcdefghijklmnopqrstuvwxyz";
+                    CreateNewAlpha(keyWord, key, alpha);
+                    PublicOldAlpha(oldAlphabet, alpha);
+                    Numbering(numbering, numberingForNew);
+                    Numbering10(numbering2, numberingForNew2, alpha);
+                    Encrypt(encryptWord, alpha, test);
+                    IndexEncryptWordCaesar(res, alpha, wordEncriptZezar);
+                }
+                if (LanguagesRu.IsChecked == true)
+                {
+
+                    //CleanPage();
+                    newAlpha = new char[33];
+                    string alpha = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+                    CreateNewAlpha(keyWord, key, alpha);
+                    PublicOldAlpha(oldAlphabet, alpha);
+                    Numbering(numbering, numberingForNew);
+                    Numbering10Ru(numberingForRu, numberingForNew2Ru);
+                    NumberingRu(numberingForNew3Ru, numberingForRu3, alpha);
+                    Encrypt(encryptWord, alpha, test);
+                    IndexEncryptWordCaesar(res, alpha, wordEncriptZezar);
+                }
+
+                PublicNewAlpha(newAlphabet);
+
+
+                EncryptionMatrix.SelectedMatrix(keyForNewAlfavet, wordEncriptIndex, wordEncriptMatrix, numRes);
+            
+
+            #endregion
             }
-            if (LanguagesRu.IsChecked == true)
+            else
             {
-
-                //CleanPage();
-                newAlpha = new char[33];
-                string alpha = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
-                createNewAlpha(keyWord, key, alpha);
-                publicOldAlpha(oldAlphabet, alpha);
-                Numbering(numbering, numberingForNew);
-                Numbering10Ru(numberingForRu, numberingForNew2Ru, alpha);
-                NumberingRu( numberingForNew3Ru, numberingForRu3, alpha);
-                encrypt(encryptWord, alpha, test);
-                indexEncryptWordCaesar(res, alpha, wordEncriptZezar);
+                Button buttonEncrypt = new Button();
+                buttonEncrypt.IsEnabled = false;
             }
-
-            publicNewAlpha(newAlphabet);
-
-
-            EncryptionMatrix.SelectedMatrix(keyForNewAlfavet, wordEncriptIndex, wordEncriptMatrix, numRes);
-
-
-
-
-
-
+            
         }
 
         private void Clean_Click(object sender, RoutedEventArgs e)
@@ -320,15 +318,15 @@ namespace WpfApp1
 
         }
 
-        private void pageMatrixEncryption(object sender, RoutedEventArgs e)
+        private void PageMatrixEncryption(object sender, RoutedEventArgs e)
         {
             MatrixEncryption MatrixEncryption = new MatrixEncryption();
             MatrixEncryption.Show();
-            EncryptionMatrix.printMatrix(MatrixEncryption.TextBlockMatrix1, EncryptionMatrix.matrix1);
-            EncryptionMatrix.printMatrix(MatrixEncryption.TextBlockMatrix2, EncryptionMatrix.matrix2);
-            EncryptionMatrix.printMatrix(MatrixEncryption.TextBlockMatrix3, EncryptionMatrix.matrix3);
-            EncryptionMatrix.printMatrix(MatrixEncryption.TextBlockMatrix4, EncryptionMatrix.matrix4);
-            EncryptionMatrix.printMatrix(MatrixEncryption.TextBlockMatrix5, EncryptionMatrix.matrix5);
+            EncryptionMatrix.PrintMatrix(MatrixEncryption.TextBlockMatrix1, EncryptionMatrix.matrix1);
+            EncryptionMatrix.PrintMatrix(MatrixEncryption.TextBlockMatrix2, EncryptionMatrix.matrix2);
+            EncryptionMatrix.PrintMatrix(MatrixEncryption.TextBlockMatrix3, EncryptionMatrix.matrix3);
+            EncryptionMatrix.PrintMatrix(MatrixEncryption.TextBlockMatrix4, EncryptionMatrix.matrix4);
+            EncryptionMatrix.PrintMatrix(MatrixEncryption.TextBlockMatrix5, EncryptionMatrix.matrix5);
 
 
             EncryptionMatrix.Numeric(MatrixEncryption.numericMatrix9, MatrixEncryption.numericMatrix16, MatrixEncryption.numericMatrix33);
@@ -339,7 +337,7 @@ namespace WpfApp1
 
         }
 
-        private void pageChoiceMatrix(object sender, RoutedEventArgs e)
+        private void PageChoiceMatrix(object sender, RoutedEventArgs e)
         {
 
             ChoiceMatrix ChoiceMatrix = new ChoiceMatrix();
@@ -348,7 +346,7 @@ namespace WpfApp1
             EncryptionMatrix.Numeric(ChoiceMatrix.numericMatrix9, ChoiceMatrix.numericMatrix16, ChoiceMatrix.numericMatrix33);
         }
 
-        private void pageDecrypted(object sender, RoutedEventArgs e)
+        private void PageDecrypted(object sender, RoutedEventArgs e)
         {
             Decoding Decoding = new Decoding();
             Decoding.Show();
@@ -361,30 +359,30 @@ namespace WpfApp1
             switch (numberMatrix)
             {
                 case 1:
-                    EncryptionMatrix.matrixEncryptWord(Decoding.indexmatrixword, EncryptionMatrix.matrix1, numRes); break;
+                    EncryptionMatrix.MatrixEncryptWord( EncryptionMatrix.matrix1, numRes); break;
                 case 2:
-                    EncryptionMatrix.matrixEncryptWord(Decoding.indexmatrixword, EncryptionMatrix.matrix2, numRes); break;
+                    EncryptionMatrix.MatrixEncryptWord( EncryptionMatrix.matrix2, numRes); break;
                 case 3:
-                    EncryptionMatrix.matrixEncryptWord(Decoding.indexmatrixword, EncryptionMatrix.matrix3, numRes); break;
+                    EncryptionMatrix.MatrixEncryptWord( EncryptionMatrix.matrix3, numRes); break;
                 case 4:
-                    EncryptionMatrix.matrixEncryptWord(Decoding.indexmatrixword, EncryptionMatrix.matrix4, numRes); break;
+                    EncryptionMatrix.MatrixEncryptWord( EncryptionMatrix.matrix4, numRes); break;
                 case 5:
-                    EncryptionMatrix.matrixEncryptWord(Decoding.indexmatrixword, EncryptionMatrix.matrix4, numRes); break;
+                    EncryptionMatrix.MatrixEncryptWord( EncryptionMatrix.matrix4, numRes); break;
 
             }
            
-            EncryptionMatrix.printMatrixWord(Decoding.indexmatrixword, EncryptionMatrix.matrixIndex);
+            EncryptionMatrix.PrintMatrixWord(Decoding.indexmatrixword, EncryptionMatrix.matrixIndex);
             EncryptionMatrix.DeterminateMatrix(Decoding.determinant, EncryptionMatrix.matrixIndex, Decoding.indexBlock);
             if (LanguagesEn.IsChecked == true)
             {
                 newAlpha = new char[26];
                 string alpha = "abcdefghijklmnopqrstuvwxyz";
-                createNewAlpha(keyWord, key, alpha);
+                CreateNewAlpha(keyWord, key, alpha);
                 Decoding.LettersAlphabetByIndex(alpha, Decoding.decryptWordCaesar, EncryptionMatrix.mas1);
-                publicOldAlpha(Decoding.oldAlphabet, alpha);
+                PublicOldAlpha(Decoding.oldAlphabet, alpha);
                 NumericEnAndRu.NumericRu(Decoding.numbering);
                 NumericEnAndRu.NumericEn(Decoding.numberingForRu);
-                publicNewAlpha(Decoding.NewAlphabet);
+                PublicNewAlpha(Decoding.NewAlphabet);
 
                 NumericEnAndRu.NumericRu(Decoding.NewNumbering);
                 NumericEnAndRu.NumericEn(Decoding.NewNumberingForRu);
@@ -397,13 +395,13 @@ namespace WpfApp1
             {
                 newAlpha = new char[33];
                 string alpha = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
-                createNewAlpha(keyWord, key, alpha);
+                CreateNewAlpha(keyWord, key, alpha);
                 Decoding.LettersAlphabetByIndex(alpha, Decoding.decryptWordCaesar, EncryptionMatrix.mas1);
-                publicOldAlpha(Decoding.oldAlphabet, alpha);
+                PublicOldAlpha(Decoding.oldAlphabet, alpha);
                 NumericEnAndRu.NumericRu(Decoding.numbering);
                 NumericEnAndRu.NumericRu24(Decoding.numberingForRu_Copy);
                 NumericEnAndRu.NumericRu33(Decoding.numberingForRu3);
-                publicNewAlpha(Decoding.NewAlphabet);
+                PublicNewAlpha(Decoding.NewAlphabet);
 
                 NumericEnAndRu.NumericRu(Decoding.NewNumbering);
                 NumericEnAndRu.NumericRu24(Decoding.NewNumberingForRu_Copy);
@@ -413,6 +411,47 @@ namespace WpfApp1
 
             }
 
+        }
+
+        private void EncryptedWord_TextChanged(object sender, TextChangedEventArgs e)
+        {
+          
+            Validation.NotEmptyField(encryptedWord);
+           
+        }
+        private void EncryptedWord_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(encryptedWord.Text))
+            {
+                toolTip1.Content = "Заполните поле";
+            }
+        }
+
+        private void TextKeyWord_TextChanged(object sender, TextChangedEventArgs e)
+        {
+           
+            Validation.NotEmptyField(textKeyWord);
+           
+        }
+        private void TextKeyWord_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(encryptedWord.Text))
+            {
+                toolTip2.Content = "Заполните поле";
+            }
+        }
+
+        private void KeyForNewAlfavet_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+            Validation.NotEmptyField(keyForNewAlfavet);
+        }
+        private void KeyForNewAlfavet_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(encryptedWord.Text))
+            {
+                toolTip3.Content = "Заполните поле";
+            }
         }
     }
 }
