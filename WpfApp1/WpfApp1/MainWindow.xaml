@@ -25,7 +25,7 @@
             </TextBox.ToolTip>
         </TextBox>
         <Label Content="Введите ключ" HorizontalAlignment="Left" Margin="49,143,0,0" VerticalAlignment="Top"/>
-        <TextBox SpellCheck.IsEnabled="True" materialDesign:HintAssist.Hint="5" Language="ru-ru" Name="keyForNewAlfavet" HorizontalAlignment="Left" Margin="226,147,0,0" Text="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="KeyForNewAlfavet_TextChanged" MouseLeave="KeyForNewAlfavet_Leave">
+        <TextBox SpellCheck.IsEnabled="True" materialDesign:HintAssist.Hint="5" Language="ru-ru" Name="keyForNewAlfavet" HorizontalAlignment="Left" Margin="226,147,0,0"  VerticalAlignment="Top" Width="120" TextChanged="KeyForNewAlfavet_TextChanged" MouseLeave="KeyForNewAlfavet_Leave">
             <TextBox.ToolTip >
                 <ToolTip x:Name="toolTip3">
                 </ToolTip>
