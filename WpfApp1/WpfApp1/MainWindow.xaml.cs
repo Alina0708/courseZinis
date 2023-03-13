@@ -415,11 +415,14 @@ namespace WpfApp1
 
         }
 
+ 
         private void EncryptedWord_TextChanged(object sender, TextChangedEventArgs e)
         {
-          
-            Validation.NotEmptyField(encryptedWord);
            
+            //RadioButton LanguagesRu = new RadioButton();
+            Validation.NotEmptyField(encryptedWord);
+            Validation.OnleLettersEn(encryptedWord);
+      
         }
         private void EncryptedWord_Leave(object sender, EventArgs e)
         {
@@ -431,9 +434,18 @@ namespace WpfApp1
 
         private void TextKeyWord_TextChanged(object sender, TextChangedEventArgs e)
         {
-           
+           // RadioButton LanguagesEn = new RadioButton();
+            //RadioButton LanguagesRu = new RadioButton();
             Validation.NotEmptyField(textKeyWord);
-           
+           /* if (LanguagesEn.IsChecked == true)
+            {
+                Validation.OnleLettersEn(textKeyWord);
+            }
+            if (LanguagesRu.IsChecked == true)
+            {
+                Validation.OnlyLettersRu(textKeyWord);
+            }*/
+
         }
         private void TextKeyWord_Leave(object sender, EventArgs e)
         {

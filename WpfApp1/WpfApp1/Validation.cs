@@ -38,14 +38,24 @@ namespace WpfApp1
             }
         }
 
-        public void OnlyLettersRu()
+        public void OnlyLettersRu(TextBox LetterTextBox)
         {
-
+            string input = LetterTextBox.Text;
+            if (!Regex.IsMatch(input, "^[а-яА-Я]*$"))
+            {
+                LetterTextBox.Text = Regex.Replace(input, "[^а-яА-Я]", "");
+                LetterTextBox.CaretIndex = LetterTextBox.Text.Length;
+            }
         }
 
-        public void OnleLettersEn()
+        public void OnleLettersEn(TextBox LetterTextBox)
         {
-
+            string input = LetterTextBox.Text;
+            if (!Regex.IsMatch(input, "^[a-zA-Z]*$"))
+            {
+                LetterTextBox.Text = Regex.Replace(input, "[^a-zA-Z]", "");
+                LetterTextBox.CaretIndex = LetterTextBox.Text.Length;
+            }
         }
 
         
