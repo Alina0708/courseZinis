@@ -415,14 +415,18 @@ namespace WpfApp1
 
         }
 
- 
+       
         private void EncryptedWord_TextChanged(object sender, TextChangedEventArgs e)
         {
-           
-            //RadioButton LanguagesRu = new RadioButton();
             Validation.NotEmptyField(encryptedWord);
-            Validation.OnleLettersEn(encryptedWord);
-      
+            if (LanguagesEn != null &&  LanguagesEn.IsChecked == true)
+            {
+                Validation.OnlyLettersEn(encryptedWord);
+            }
+            else if (LanguagesRu != null && LanguagesRu.IsChecked == true)
+            {
+                Validation.OnlyLettersRu(encryptedWord);
+            }
         }
         private void EncryptedWord_Leave(object sender, EventArgs e)
         {
@@ -434,17 +438,16 @@ namespace WpfApp1
 
         private void TextKeyWord_TextChanged(object sender, TextChangedEventArgs e)
         {
-           // RadioButton LanguagesEn = new RadioButton();
-            //RadioButton LanguagesRu = new RadioButton();
+            
             Validation.NotEmptyField(textKeyWord);
-           /* if (LanguagesEn.IsChecked == true)
+            if (LanguagesEn != null && LanguagesEn.IsChecked == true)
             {
-                Validation.OnleLettersEn(textKeyWord);
+                Validation.OnlyLettersEn(textKeyWord);
             }
-            if (LanguagesRu.IsChecked == true)
+            else if (LanguagesRu != null && LanguagesRu.IsChecked == true)
             {
                 Validation.OnlyLettersRu(textKeyWord);
-            }*/
+            }
 
         }
         private void TextKeyWord_Leave(object sender, EventArgs e)
@@ -453,11 +456,11 @@ namespace WpfApp1
             {
                 toolTip2.Content = "Заполните поле";
             }
+            
         }
 
         private void KeyForNewAlfavet_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            
+        {   
             Validation.NotEmptyField(keyForNewAlfavet);
             Validation.OnlyNumbers(keyForNewAlfavet);
         }
@@ -467,6 +470,11 @@ namespace WpfApp1
             {
                 toolTip3.Content = "Заполните поле";
             }
+        }
+
+        private void LanguagesEn_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

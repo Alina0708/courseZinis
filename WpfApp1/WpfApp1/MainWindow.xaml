@@ -40,8 +40,8 @@
         <Label Content="Выберите язык" HorizontalAlignment="Left" Margin="51,38,0,0" VerticalAlignment="Top"/>
 
         <StackPanel x:Name="stackPanel" Margin="184,44,404,699" Orientation="Horizontal" >
-            <RadioButton Name="LanguagesRu" Content="Русский"  Height="15" Width="96" />
-            <RadioButton Name="LanguagesEn" Content="Английский" IsChecked="True" Height="15" Width="96" />
+            <RadioButton Name="LanguagesRu" Content="Русский"  IsChecked="False" Height="15" Width="96" />
+            <RadioButton Name="LanguagesEn" Content="Английский"  IsChecked="True" Height="15" Width="96" Checked="LanguagesEn_Checked" />
         </StackPanel>
         <Button BorderBrush="#e8c1f5" Background="#e8c1f5" Content="Очистить" Name="Clean" HorizontalAlignment="Left" Margin="122,188,0,0" VerticalAlignment="Top" Width="122" Click="Clean_Click" Height="27"/>
         <TextBlock  x:Name="numbering" HorizontalAlignment="Left" Margin="46,271,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="178"/>
